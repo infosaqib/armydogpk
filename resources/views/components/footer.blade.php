@@ -31,8 +31,8 @@
             <div>
                 <h4 class="text-white font-bold mb-4">Contact</h4>
                 <div class="text-sm space-y-2">
-                    <p>📞 0300-5454631</p>
-                    <p>📞 0345-7961818</p>
+                    <p>📞 0300-0000000</p>
+                    <p>📞 0300-0000000</p>
                     <p>✉️ <a href="mailto:info@armydogcenter.pk" class="hover:text-primary">info@armydogcenter.pk</a></p>
                     <p>🕐 24/7 Emergency Service</p>
                 </div>
