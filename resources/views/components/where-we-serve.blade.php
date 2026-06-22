@@ -170,10 +170,6 @@
         <div class="mt-16 text-center">
             <p class="text-gray-600 mb-6">Our services are available nationwide with rapid deployment capabilities for
                 emergency situations</p>
-            <a href="/contact"
-                class="inline-block bg-primary hover:bg-amber-700 text-dark px-8 py-4 rounded-lg font-bold transition">
-                Request Service in Your Area
-            </a>
         </div>
     </div>
 </section>

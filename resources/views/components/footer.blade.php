@@ -1,4 +1,4 @@
-<footer class="bg-dark text-gray-300 mt-20">
+<footer class="bg-dark text-gray-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <!-- About -->
@@ -33,7 +33,8 @@
                 <div class="text-sm space-y-2">
                     <p>📞 0300-0000000</p>
                     <p>📞 0300-0000000</p>
-                    <p>✉️ <a href="mailto:info@armydogcenter.pk" class="hover:text-primary">info@armydogcenter.pk</a></p>
+                    <p>✉️ <a href="mailto:info@armydogcenter.pk" class="hover:text-primary">info@armydogcenter.pk</a>
+                    </p>
                     <p>🕐 24/7 Emergency Service</p>
                 </div>
             </div>
