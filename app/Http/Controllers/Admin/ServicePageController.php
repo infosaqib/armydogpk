@@ -57,11 +57,6 @@ class ServicePageController extends Controller
             ->with('success', 'Service page created successfully.');
     }
 
-    public function show(ServicePage $servicePage)
-    {
-        return view('admin.service-pages.show', compact('servicePage'));
-    }
-
     public function edit(ServicePage $servicePage)
     {
         $provinces = [
