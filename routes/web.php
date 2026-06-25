@@ -17,9 +17,9 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/team', function () {
-    return view('team');
-})->name('team');
+Route::get('/blog', function () {
+    return view('blog');
+})->name('blog');
 
 Route::get('/contact', function () {
     return view('contact');
