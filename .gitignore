@@ -2,6 +2,7 @@
 /vendor/
 /storage/
 /bootstrap/cache/
+public/build/
 .env
 .env.local
 .env.*.local
