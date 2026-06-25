@@ -34,11 +34,6 @@ class BlogController extends Controller
             ->with('success', 'Blog created successfully.');
     }
 
-    public function show(Blog $blog)
-    {
-        return view('admin.blogs.show', compact('blog'));
-    }
-
     public function edit(Blog $blog)
     {
         return view('admin.blogs.edit', compact('blog'));
