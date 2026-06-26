@@ -12,13 +12,6 @@
             <a href="/about" class="hover:text-primary transition">About</a>
             <a href="/blog" class="hover:text-primary transition">Blog</a>
             <a href="/contact" class="hover:text-primary transition">Contact</a>
-            @auth
-            <a href="/dashboard" class="hover:text-primary transition">Dashboard</a>
-            <a href="/logout" class="hover:text-primary transition">Logout</a>
-            @endauth
-            @guest
-            <a href="/login" class="btn-primary">Login</a>
-            @endguest
         </div>
 
         <!-- Mobile Menu Button -->

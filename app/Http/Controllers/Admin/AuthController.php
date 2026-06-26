@@ -20,23 +20,17 @@ class AuthController extends Controller
             'password' => ['required'],
         ]);
 
+        $credentials['is_admin'] = true;
+
         if (!Auth::attempt($credentials, $request->boolean('remember'))) {
             return back()->withErrors([
-                'email' => 'Invalid credentials.',
+                'email' => 'Invalid credentials or unauthorized access.',
             ]);
         }
 
         $request->session()->regenerate();
 
-        if (!auth()->user()->is_admin) {
-            Auth::logout();
-
-            return back()->withErrors([
-                'email' => 'Unauthorized.',
-            ]);
-        }
-
-        return redirect()->route('admin.blogs.index');
+        return redirect()->route('admin.dashboard');
     }
 
     public function logout(Request $request)

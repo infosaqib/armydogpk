@@ -30,7 +30,7 @@ class BlogController extends Controller
         $blog = Blog::create($validated);
 
         return redirect()
-            ->route('blogs.edit', $blog)
+            ->route('admin.blogs.edit', $blog)
             ->with('success', 'Blog created successfully.');
     }
 
@@ -49,7 +49,7 @@ class BlogController extends Controller
         $blog->update($validated);
 
         return redirect()
-            ->route('blogs.edit', $blog)
+            ->route('admin.blogs.edit', $blog)
             ->with('success', 'Blog updated successfully.');
     }
 
@@ -58,7 +58,7 @@ class BlogController extends Controller
         $blog->delete();
 
         return redirect()
-            ->route('blogs.index')
+            ->route('admin.blogs.index')
             ->with('success', 'Blog deleted successfully.');
     }
 }

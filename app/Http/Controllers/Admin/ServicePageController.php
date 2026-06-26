@@ -53,7 +53,7 @@ class ServicePageController extends Controller
         $servicePage = ServicePage::create($validated);
 
         return redirect()
-            ->route('service-pages.edit', $servicePage)
+            ->route('admin.service-pages.edit', $servicePage)
             ->with('success', 'Service page created successfully.');
     }
 
@@ -94,7 +94,7 @@ class ServicePageController extends Controller
         $servicePage->update($validated);
 
         return redirect()
-            ->route('service-pages.edit', $servicePage)
+            ->route('admin.service-pages.edit', $servicePage)
             ->with('success', 'Service page updated successfully.');
     }
 
@@ -103,7 +103,7 @@ class ServicePageController extends Controller
         $servicePage->delete();
 
         return redirect()
-            ->route('service-pages.index')
+            ->route('admin.service-pages.index')
             ->with('success', 'Service page deleted successfully.');
     }
 }
