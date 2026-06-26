@@ -1,0 +1,59 @@
+@extends('layout')
+
+@section('title', 'Our Team - Army Dog Center')
+@section('description', 'Meet the expert trainers and handlers at Army Dog Center.')
+
+@section('content')
+<!-- Hero Section -->
+<section class="relative w-full overflow-hidden">
+
+    <!-- Orange Background -->
+    <div class="relative min-h-[400px]">
+        <svg class="absolute inset-0 w-full h-full" viewBox="0 0 1600 600" preserveAspectRatio="none">
+            <path fill="#f57224"
+                d="M0,0 L1600,0 L1600,470 C1400,540 1250,560 1100,540 C950,520 850,470 720,490 C560,515 420,580 280,560 C170,545 80,500 0,440 Z" />
+        </svg>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center pt-8 lg:pt-20 pb-16">
+
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                Our Blog
+            </h1>
+
+            <p class="mt-6 text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
+                Discover training insights, success stories, security updates, and expert guidance
+                from Army Dog Center professionals across Pakistan.
+            </p>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- Blog section -->
+<section class="py-24 ">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 class="font-manrope text-4xl font-bold text-gray-900 text-center mb-16">Our latest blog</h2>
+        <div
+            class="flex justify-center  gap-y-8 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between lg:gap-x-8">
+            @foreach($blogs as $blog)
+            <div class="group w-full max-lg:max-w-xl lg:w-1/3 border border-gray-300 rounded-2xl">
+                <div class="flex items-center">
+                    <img src="{{$blog->image}}" alt="blogs tailwind section" class="rounded-t-2xl w-full object-cover">
+                </div>
+                <div class="p-4 lg:p-6 transition-all duration-300 rounded-b-2xl group-hover:bg-gray-50">
+                    <span
+                        class="text-indigo-600 font-medium mb-3 block">{{ $blog->created_at ? $blog->created_at->format('M d, Y') : 'N/A' }}</span>
+                    <h4 class="text-xl text-gray-900 font-medium leading-8 mb-5">{{$blog->title}}</h4>
+                    <p class="text-gray-500 leading-6 mb-10">{{$blog->content}}</p>
+                    <a href="{{ '/blogs/' . $blog->slug }}"
+                        class="cursor-pointer text-lg text-indigo-600 font-semibold">Read
+                        more..</a>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+@endsection
