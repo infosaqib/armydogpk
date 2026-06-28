@@ -11,7 +11,7 @@ class BlogController extends Controller
     {
         $blogs = Blog::latest()->paginate(12);
 
-        return view('blogs.index', compact('blogs'));
+        return view('blog', compact('blogs'));
     }
     public function show($slug)
     {
