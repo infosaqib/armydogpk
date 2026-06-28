@@ -6,9 +6,17 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Services\StaticSiteGenerator;
 
 class BlogController extends Controller
 {
+
+    protected StaticSiteGenerator $generator;
+
+    public function __construct(StaticSiteGenerator $generator)
+    {
+        $this->generator = $generator;
+    }
 
     protected function attachEditorImages(Blog $blog): void
     {
@@ -43,9 +51,11 @@ class BlogController extends Controller
             'title' => ['required', 'string', 'max:255'],
             'content' => ['required', 'string'],
         ]);
-
         $blog = Blog::create($validated);
+
         $this->attachEditorImages($blog);
+
+        $this->generator->generateBlog($blog);
 
         return redirect()
             ->route('admin.blogs.edit', $blog)
@@ -70,6 +80,8 @@ class BlogController extends Controller
 
         $this->attachEditorImages($blog);
 
+        $this->generator->generateBlog($blog);
+
         return redirect()
             ->route('admin.blogs.edit', $blog)
             ->with('success', 'Blog updated successfully.');
@@ -84,6 +96,8 @@ class BlogController extends Controller
             $image->delete();
         }
 
+        $this->generator->deleteBlog($blog);
+        
         $blog->delete();
 
         return redirect()

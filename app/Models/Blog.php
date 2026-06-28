@@ -12,8 +12,6 @@ class Blog extends Model
         'content',
     ];
 
-    use Illuminate\Support\Str;
-
     protected static function booted()
     {
         static::saving(function (Blog $blog) {
