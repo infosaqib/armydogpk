@@ -1,8 +1,10 @@
 <?php
 
+
 namespace App\Services;
 
 use App\Models\Blog;
+use App\Models\ServicePage;
 use Illuminate\Support\Facades\File;
 
 class StaticSiteGenerator
@@ -35,6 +37,29 @@ class StaticSiteGenerator
     public function deleteBlog(Blog $blog): void
     {
         $path = public_path('blogs/' . $blog->slug . '.html');
+
+        if (File::exists($path)) {
+            File::delete($path);
+        }
+    }
+
+    public function generateServicePage(ServicePage $servicePage): void
+    {
+        File::ensureDirectoryExists(public_path('services'));
+
+        $html = view('static.services', [
+            'servicePage' => $servicePage,
+        ])->render();
+
+        File::put(
+            public_path("services/{$servicePage->slug}.html"),
+            $html
+        );
+    }
+
+    public function deleteServicePage(ServicePage $servicePage): void
+    {
+        $path = public_path("services/{$servicePage->slug}.html");
 
         if (File::exists($path)) {
             File::delete($path);

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Army Dog Centre {{ $servicePage->city }} - Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description"
+        content="Professional Army Dog Centre services in {{ $servicePage->city }}, {{ ucfirst($servicePage->province) }}. Security dogs, investigation, tracking, detection and emergency response services.">
+    <link rel="canonical" href="{{ url('services/' . $servicePage->slug . '.html') }}">
+
+    <meta property="og:title" content="Army Dog Centre {{ $servicePage->city }}">
+    <meta property="og:description"
+        content="Professional canine security and investigation services in {{ $servicePage->city }}.">
+    <meta property="og:image" content="{{ asset('storage/' . $servicePage->image->path) }}">
+    <meta property="og:type" content="website">
+
+    <style>
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+    </style>
+
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#f57224',
+                }
+            }
+        }
+    }
+    </script>
+</head>
+
+<body class="bg-white text-gray-900 antialiased">
+
+    <section class="relative w-full overflow-hidden">
+        <div class="relative min-h-[400px]">
+            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 1600 600" preserveAspectRatio="none">
+                <path fill="#f57224"
+                    d="M0,0 L1600,0 L1600,470 C1400,540 1250,560 1100,540 C950,520 850,470 720,490 C560,515 420,580 280,560 C170,545 80,500 0,440 Z" />
+            </svg>
+
+            <div class="relative z-10 max-w-4xl mx-auto px-6 text-center pt-8 lg:pt-20 pb-16">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                    Army Dog Centre {{ $servicePage->city }}
+                </h1>
+
+                <p class="mt-6 text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
+                    Professional canine services and security solutions in
+                    {{ $servicePage->city }}, {{ ucfirst($servicePage->province) }}
+                </p>
+                <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+                    <a href="{{ url('/contact') }}"
+                        class="inline-flex items-center gap-2 rounded-md bg-white px-6 py-3 text-sm font-semibold text-gray-900 shadow hover:bg-gray-50 transition">
+                        <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M10 2a6 6 0 00-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 00-6-6zm0 8a2 2 0 110-4 2 2 0 010 4z" />
+                        </svg>
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-20">
+        <div class="mx-auto max-w-6xl px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">
+                    Our Services in <span class="text-primary">{{ $servicePage->city }}</span>
+                </h2>
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    Army Dog Centre provides elite canine services throughout
+                    {{ $servicePage->city }}, {{ ucfirst($servicePage->province) }}.
+                    Our team of experts and highly trained dogs are available
+                    24/7 for emergency response and security needs.
+                </p>
+
+                <ul class="mt-8 space-y-4">
+                    @foreach ([
+                    "Investigation & Evidence Detection Services in {$servicePage->city}",
+                    "Security & Protection Services in {$servicePage->city}",
+                    "Specialized Search & Tracking Operations in {$servicePage->city}",
+                    "24/7 Emergency Response Team in {$servicePage->city}",
+                    ] as $service)
+                    <li class="flex items-start gap-3 text-gray-800">
+                        <span class="mt-1 text-primary flex-shrink-0">
+                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </span>
+                        <span class="font-medium">{{ $service }}</span>
+                    </li>
+                    @endforeach
+                </ul>
+
+            </div>
+
+            <div class="flex justify-center lg:justify-end">
+                <img src="{{ asset('storage/' . $servicePage->image->path) }}"
+                    alt="Army Dog Centre {{ $servicePage->city }}"
+                    class="rounded-xl shadow-xl max-w-full h-auto object-cover max-h-[350px]">
+            </div>
+        </div>
+
+
+        <div class="max-w-md mx-auto mt-16 bg-gray-50 border border-gray-100 rounded-2xl p-6 text-center shadow-sm">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+            </div>
+            <h4 class="mt-4 text-lg font-bold text-gray-900">Get in Touch</h4>
+            <div class="mt-2 text-gray-700 space-y-1 font-semibold text-base tracking-wide">
+                <p>{{ $servicePage->phone_1 }}</p>
+                @if($servicePage->phone_2)
+                <p>{{ $servicePage->phone_2 }}</p>
+                @endif
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-slate-50 py-20">
+        <div class="mx-auto max-w-6xl px-6">
+            <h2 class="text-center text-2xl sm:text-3xl font-bold text-gray-900">
+                Why Choose Army Dog Centre in
+                <span class="text-primary">{{ $servicePage->city }}</span>
+            </h2>
+
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+                @foreach ([
+                [
+                'title' => 'Local Expertise',
+                'desc' => "Our team has extensive knowledge of {$servicePage->city} and surrounding areas for rapid
+                response and effective operations."
+                ],
+                [
+                'title' => 'Fast Response Time',
+                'desc' => "Our strategically positioned teams in {$servicePage->city} ensure quick deployment for
+                emergencies and urgent security needs."
+                ],
+                [
+                'title' => 'Community Trust',
+                'desc' => "We've built strong relationships with local authorities and businesses in
+                {$servicePage->city} for seamless collaboration."
+                ],
+                ] as $item)
+                <div class="rounded-lg bg-white p-7 shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-gray-900">{{ $item['title'] }}</h3>
+                    <p class="mt-4 text-gray-600 leading-relaxed text-sm">{{ $item['desc'] }}</p>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

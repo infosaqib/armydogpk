@@ -15,6 +15,16 @@ Route::get('/services', function () {
     return view('services');
 })->name('services');
 
+Route::get('/services/{slug}', function ($slug) {
+
+    $path = public_path("services/{$slug}.html");
+
+    abort_unless(File::exists($path), 404);
+
+    return response()->file($path);
+
+})->name('services.show');
+
 Route::get('/about', function () {
     return view('about');
 })->name('about');
