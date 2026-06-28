@@ -12,11 +12,27 @@ class Blog extends Model
         'content',
     ];
 
+    use Illuminate\Support\Str;
+
     protected static function booted()
     {
         static::saving(function (Blog $blog) {
+
             if ($blog->isDirty('title')) {
-                $blog->slug = Str::slug($blog->title);
+
+                $slug = Str::slug($blog->title);
+                $originalSlug = $slug;
+                $count = 1;
+
+                while (
+                    Blog::where('slug', $slug)
+                        ->where('id', '!=', $blog->id)
+                        ->exists()
+                ) {
+                    $slug = $originalSlug . '-' . $count++;
+                }
+
+                $blog->slug = $slug;
             }
 
             if ($blog->isDirty('content')) {
