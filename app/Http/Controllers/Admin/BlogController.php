@@ -69,6 +69,9 @@ class BlogController extends Controller
 
     public function update(Request $request, Blog $blog)
     {
+
+        $oldSlug = $blog->slug;
+        
         $validated = $request->validate([
             'title' => ['required', 'string', 'max:255'],
             'content' => ['required', 'string'],
@@ -80,7 +83,7 @@ class BlogController extends Controller
 
         $this->attachEditorImages($blog);
 
-        $this->generator->generateBlog($blog);
+        $this->generator->generateBlog($blog, $oldSlug);
 
         return redirect()
             ->route('admin.blogs.edit', $blog)
