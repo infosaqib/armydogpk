@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\ContactController;
@@ -19,7 +20,15 @@ Route::get('/about', function () {
 })->name('about');
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
-Route::get('/blogs/{slug}', [BlogController::class, 'show']);
+Route::get('/blogs/{slug}', function ($slug) {
+
+    $path = public_path("blogs/{$slug}.html");
+
+    abort_unless(File::exists($path), 404);
+
+    return response()->file($path);
+
+})->name('blogs.show');
 
 Route::get('/contact', function () {
     return view('contact');
