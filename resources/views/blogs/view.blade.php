@@ -26,8 +26,8 @@
                 <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl">
                     {{$blog->title}}</h1>
             </header>
-            <div>
-                <p>{{ $blog->content }}</p>
+            <div class="prose prose-lg max-w-none">
+                {!! $blog->content !!}
             </div>
         </article>
     </div>

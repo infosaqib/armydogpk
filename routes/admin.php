@@ -24,6 +24,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::resource('service-pages', ServicePageController::class);
 
+    Route::post(
+        'ckeditor/upload',
+        [ImageController::class, 'ckeditor']
+    )->name('ckeditor.upload');
+    
     Route::post('images', [ImageController::class, 'store'])
         ->name('images.store');
 

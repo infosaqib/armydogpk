@@ -11,6 +11,25 @@ use Illuminate\Support\Facades\Storage;
 
 class ImageController extends Controller
 {
+
+
+    public function ckeditor(Request $request)
+    {
+        $request->validate([
+            'upload' => ['required', 'image', 'max:5120'],
+        ]);
+
+        $file = $request->file('upload');
+
+        $path = $file->store('uploads/editor', 'public');
+
+        return response()->json([
+            'uploaded' => 1,
+            'fileName' => $file->getClientOriginalName(),
+            'url' => asset('storage/' . $path),
+        ]);
+    }
+    
     public function store(Request $request)
     {
         $validated = $request->validate([

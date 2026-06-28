@@ -36,7 +36,7 @@
                         Blog Content
                     </label>
 
-                    <textarea id="content" name="content" required>{{ old('content') }}</textarea>
+                    <textarea id="content" name="content">{{ old('content') }}</textarea>
                 </div>
 
                 <div class="flex justify-end">
@@ -56,8 +56,17 @@
 <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
 
 <script>
+let editor;
+
 ClassicEditor
-    .create(document.querySelector('#content'))
+    .create(document.querySelector('#content'), {
+        ckfinder: {
+            uploadUrl: "{{ route('admin.ckeditor.upload') }}?_token={{ csrf_token() }}"
+        }
+    })
+    .then(newEditor => {
+        editor = newEditor;
+    })
     .catch(error => console.error(error));
 </script>
 @endsection
