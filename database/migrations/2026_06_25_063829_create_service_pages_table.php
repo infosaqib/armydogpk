@@ -20,7 +20,7 @@ return new class extends Migration {
             $table->string('phone_1');
             $table->string('phone_2')->nullable();
 
-            $table->string('slug')->unique();
+            $table->string('slug')->unique()->index();
 
             $table->timestamps();
         });

@@ -44,7 +44,7 @@
                     </th>
                     <th class="px-6 py-4 font-medium text-sm text-on-surface-variant uppercase tracking-wider">
                         City</th>
-                    <th <th class="px-6 py-4 font-medium text-sm text-on-surface-variant uppercase tracking-wider">Date
+                    <th class="px-6 py-4 font-medium text-sm text-on-surface-variant uppercase tracking-wider">Date
                         Created</th>
                     <th
                         class="px-6 py-4 font-medium text-sm text-on-surface-variant uppercase tracking-wider text-right w-32">
