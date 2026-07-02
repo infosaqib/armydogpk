@@ -58,8 +58,9 @@
                         <div
                             class="w-12 h-12 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0 border border-gray-200">
                             {{-- FIXED: Changed $blog->image to $service_page->image --}}
-                            @if($service_page->image)
-                            <img class="w-full h-full object-cover" src="{{ asset($service_page->image) }}"
+                            @if( $service_page->image)
+                            <img class="w-full h-full object-cover"
+                                src="{{  asset('storage/' . $service_page->image->path) }}"
                                 alt="{{ $service_page->title }}" />
                             @else
                             <div class="w-full h-full flex items-center justify-center bg-gray-200 text-gray-400">
