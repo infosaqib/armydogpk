@@ -35,19 +35,21 @@
 <section class="py-24 ">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 class="font-manrope text-4xl font-bold text-gray-900 text-center mb-16">Our latest blog</h2>
-        <div
-            class="flex justify-center  gap-y-8 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between lg:gap-x-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
             @foreach($blogs as $blog)
-            <div class="group w-full max-lg:max-w-xl lg:w-1/3 border border-gray-300 rounded-2xl">
+            <div class="group w-full border border-gray-700 rounded-2xl p-4 bg-zinc-900">
                 <div class="flex items-center">
-                    <img src="{{$blog->image}}" alt="blogs tailwind section" class="rounded-t-2xl w-full object-cover">
+                    <img src="{{ $blog->thumbnail }}" alt="{{ $blog->title }}"
+                        class="rounded-t-2xl w-full h-60 object-cover">
                 </div>
                 <div class="p-4 lg:p-6 transition-all duration-300 rounded-b-2xl group-hover:bg-gray-50">
                     <span
                         class="text-indigo-600 font-medium mb-3 block">{{ $blog->created_at ? $blog->created_at->format('M d, Y') : 'N/A' }}</span>
                     <h4 class="text-xl text-gray-900 font-medium leading-8 mb-5">{{$blog->title}}</h4>
-                    <p class="text-gray-500 leading-6 mb-10">{{$blog->content}}</p>
-                    <a href="{{ '/blogs/' . $blog->slug }}"
+                    <div class="prose prose-lg max-w-none">
+                        {!! Illuminate\Support\Str::limit(strip_tags($blog->content), 100, '...') !!}
+                    </div>
+                    <a href="{{ '/blogs/' . $blog->slug . '.html'}}"
                         class="cursor-pointer text-lg text-indigo-600 font-semibold">Read
                         more..</a>
                 </div>

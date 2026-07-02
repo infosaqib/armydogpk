@@ -4,15 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class Blog extends Model
 {
+    protected $appends = ['thumbnail'];
     protected $fillable = [
         'title',
         'content',
     ];
-
-    use Illuminate\Support\Str;
 
     protected static function booted()
     {
@@ -44,5 +44,17 @@ class Blog extends Model
     public function images()
     {
         return $this->morphMany(Image::class, 'imageable');
+    }
+
+
+    public function getThumbnailAttribute(): string
+    {
+        $image = $this->images()->first();
+
+        if ($image) {
+            return asset('storage/' . $image->path);
+        }
+
+        return asset('images/default-blog.png');
     }
 }

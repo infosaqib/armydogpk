@@ -8,10 +8,10 @@
         <!-- Desktop Menu -->
         <div class="hidden md:flex gap-6">
             <a href="/" class="hover:text-primary transition">Home</a>
-            <a href="/services" class="hover:text-primary transition">Services</a>
-            <a href="/about" class="hover:text-primary transition">About</a>
-            <a href="/blog" class="hover:text-primary transition">Blog</a>
-            <a href="/contact" class="hover:text-primary transition">Contact</a>
+            <a href="{{route('services')}}" class="hover:text-primary transition">Services</a>
+            <a href="{{route('about')}}" class="hover:text-primary transition">About</a>
+            <a href="{{route('blog')}}" class="hover:text-primary transition">Blog</a>
+            <a href="{{route('contact.form')}}" class="hover:text-primary transition">Contact</a>
         </div>
 
         <!-- Mobile Menu Button -->

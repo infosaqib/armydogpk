@@ -18,7 +18,8 @@
                 </p>
             </div>
 
-            <form method="POST" action="{{ route('admin.service-pages.store') }}" class="p-8 space-y-6">
+            <form method="POST" action="{{ route('admin.service-pages.store') }}" enctype="multipart/form-data"
+                class="p-8 space-y-6">
                 @csrf
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -74,6 +75,15 @@
                             placeholder="Optional">
                     </div>
 
+                </div>
+
+                <div>
+                    <label for="image" class="block text-sm font-semibold text-gray-700 mb-2">
+                        Service Image
+                    </label>
+
+                    <input id="image" type="file" name="image" accept="image/*" required
+                        class="block w-full rounded-lg border border-gray-300 file:bg-orange-500 file:text-white file:border-0 file:px-4 file:py-2 file:mr-4">
                 </div>
 
                 <div class="flex justify-end pt-2">

@@ -10,7 +10,6 @@ return new class extends Migration {
         Schema::create('service_pages', function (Blueprint $table) {
             $table->id();
 
-            $table->string('title');
 
             $table->string('city');
 
