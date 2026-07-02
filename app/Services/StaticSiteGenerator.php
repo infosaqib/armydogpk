@@ -28,13 +28,12 @@ class StaticSiteGenerator
         $html = view('static.blog', [
             'blog' => $blog,
         ])->render();
-        
-try {
-    //code...
-    File::put(
-        $directory . '/' . $blog->slug . '.html',
-        $html
-        );
+
+        try {
+            File::put(
+                $directory . '/' . $blog->slug . '.html',
+                $html
+            );
         } catch (\Exception $e) {
             Log::error("Failed to generate blog HTML", ['blog_id' => $blog->id]);
             throw $e;

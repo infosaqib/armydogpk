@@ -24,16 +24,15 @@ class BlogController extends Controller
     {
         $pattern = '/storage\/(uploads\/editor\/[^"\']+)/';
 
-        if (@preg_match($pattern, '') === false) {
-            Log::warning("Invalid regex pattern", ['pattern' => $pattern]);
-            return;
+        try {
+            if (@preg_match($pattern, '') === false) {
+                throw new \Exception("Invalid regex pattern");
+            }
+            preg_match_all($pattern, $blog->content, $matches);
+        } catch (\Exception $e) {
+            Log::error("Failed to attach editor images", ['error' => $e->getMessage()]);
+            throw $e;
         }
-
-        preg_match_all(
-            $pattern,
-            $blog->content,
-            $matches
-        );
 
         foreach (array_unique($matches[1]) as $path) {
             $blog->images()->firstOrCreate([
@@ -66,7 +65,7 @@ class BlogController extends Controller
         $this->generator->generateBlog($blog);
 
         return redirect()
-            ->route('admin.blogs.index', $blog)
+            ->route('admin.blogs.index')
             ->with('success', 'Blog created successfully.');
     }
 
@@ -94,7 +93,7 @@ class BlogController extends Controller
         $this->generator->generateBlog($blog, $oldSlug);
 
         return redirect()
-            ->route('admin.blogs.index', $blog)
+            ->route('admin.blogs.index')
             ->with('success', 'Blog updated successfully.');
     }
 
