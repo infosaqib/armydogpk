@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use App\Services\StaticSiteGenerator;
 
@@ -20,14 +22,20 @@ class BlogController extends Controller
 
     protected function attachEditorImages(Blog $blog): void
     {
+        $pattern = '/storage\/(uploads\/editor\/[^"\']+)/';
+
+        if (@preg_match($pattern, '') === false) {
+            Log::warning("Invalid regex pattern", ['pattern' => $pattern]);
+            return;
+        }
+
         preg_match_all(
-            '/storage\/(uploads\/editor\/[^"\']+)/',
+            $pattern,
             $blog->content,
             $matches
         );
 
         foreach (array_unique($matches[1]) as $path) {
-
             $blog->images()->firstOrCreate([
                 'path' => $path,
             ]);
@@ -58,7 +66,7 @@ class BlogController extends Controller
         $this->generator->generateBlog($blog);
 
         return redirect()
-            ->route('admin.blogs.edit', $blog)
+            ->route('admin.blogs.index', $blog)
             ->with('success', 'Blog created successfully.');
     }
 
@@ -86,22 +94,26 @@ class BlogController extends Controller
         $this->generator->generateBlog($blog, $oldSlug);
 
         return redirect()
-            ->route('admin.blogs.edit', $blog)
+            ->route('admin.blogs.index', $blog)
             ->with('success', 'Blog updated successfully.');
     }
 
+
     public function destroy(Blog $blog)
     {
-        foreach ($blog->images as $image) {
+        DB::transaction(function () use ($blog) {
+            foreach ($blog->images as $image) {
+                try {
+                    Storage::disk('public')->delete($image->path);
+                } catch (\Exception $e) {
+                    Log::error("Failed to delete image file", ['image_id' => $image->id]);
+                }
+                $image->delete();
+            }
 
-            Storage::disk('public')->delete($image->path);
-
-            $image->delete();
-        }
-
-        $this->generator->deleteBlog($blog);
-        
-        $blog->delete();
+            $this->generator->deleteBlog($blog);
+            $blog->delete();
+        });
 
         return redirect()
             ->route('admin.blogs.index')

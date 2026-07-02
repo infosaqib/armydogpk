@@ -26,14 +26,7 @@ class ServicePageController extends Controller
 
     public function create()
     {
-        $provinces = [
-            'punjab',
-            'sindh',
-            'balochistan',
-            'kpk',
-            'gilgit',
-            'kashmir',
-        ];
+        $provinces = config('services.provinces');
 
         return view('admin.service-pages.create', compact('provinces'));
     }
@@ -44,14 +37,7 @@ class ServicePageController extends Controller
             'city' => ['required', 'string', 'max:255'],
             'province' => [
                 'required',
-                Rule::in([
-                    'punjab',
-                    'sindh',
-                    'balochistan',
-                    'kpk',
-                    'gilgit',
-                    'kashmir',
-                ]),
+                Rule::in(config('services.provinces')),
             ],
             'phone_1' => ['required', 'string', 'max:50'],
             'phone_2' => ['nullable', 'string', 'max:50'],

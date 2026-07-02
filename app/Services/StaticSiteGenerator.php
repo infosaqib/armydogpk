@@ -6,6 +6,7 @@ namespace App\Services;
 use App\Models\Blog;
 use App\Models\ServicePage;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 
 class StaticSiteGenerator
 {
@@ -27,11 +28,17 @@ class StaticSiteGenerator
         $html = view('static.blog', [
             'blog' => $blog,
         ])->render();
-
-        File::put(
-            $directory . '/' . $blog->slug . '.html',
-            $html
+        
+try {
+    //code...
+    File::put(
+        $directory . '/' . $blog->slug . '.html',
+        $html
         );
+        } catch (\Exception $e) {
+            Log::error("Failed to generate blog HTML", ['blog_id' => $blog->id]);
+            throw $e;
+        }
     }
 
     public function deleteBlog(Blog $blog): void

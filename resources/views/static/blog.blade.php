@@ -43,7 +43,7 @@
                 </header>
 
                 <div class="prose prose-lg max-w-none">
-                    {!! $blog->content !!}
+                    {!! Illuminate\Support\Str::sanitizeHTML($blog->content) !!}
                 </div>
 
             </article>

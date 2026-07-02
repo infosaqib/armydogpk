@@ -13,14 +13,7 @@ return new class extends Migration {
 
             $table->string('city');
 
-            $table->enum('province', [
-                'punjab',
-                'sindh',
-                'balochistan',
-                'kpk',
-                'gilgit',
-                'kashmir',
-            ]);
+            $table->enum('province', config('services.provinces'));
 
             $table->text('excerpt')->nullable();
 
