@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\ServicePage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 use App\Services\StaticSiteGenerator;
 
@@ -26,14 +29,7 @@ class ServicePageController extends Controller
 
     public function create()
     {
-        $provinces = [
-            'punjab',
-            'sindh',
-            'balochistan',
-            'kpk',
-            'gilgit',
-            'kashmir',
-        ];
+        $provinces = config('services.provinces');
 
         return view('admin.service-pages.create', compact('provinces'));
     }
@@ -44,14 +40,7 @@ class ServicePageController extends Controller
             'city' => ['required', 'string', 'max:255'],
             'province' => [
                 'required',
-                Rule::in([
-                    'punjab',
-                    'sindh',
-                    'balochistan',
-                    'kpk',
-                    'gilgit',
-                    'kashmir',
-                ]),
+                Rule::in(config('services.provinces')),
             ],
             'phone_1' => ['required', 'string', 'max:50'],
             'phone_2' => ['nullable', 'string', 'max:50'],
@@ -76,8 +65,35 @@ class ServicePageController extends Controller
 
     public function destroy(ServicePage $servicePage)
     {
-        $this->generator->deleteServicePage($servicePage);
-        $servicePage->delete();
+        DB::transaction(function () use ($servicePage) {
+            try {
+                // Delete the image file from storage
+                if ($servicePage->image) {
+                    try {
+                        Storage::disk('public')->delete($servicePage->image->path);
+                    } catch (\Exception $e) {
+                        Log::error("Failed to delete service page image file", [
+                            'service_page_id' => $servicePage->id,
+                            'image_path' => $servicePage->image->path,
+                            'error' => $e->getMessage()
+                        ]);
+                    }
+                    $servicePage->image()->delete();
+                }
+
+                // Delete the generated static page
+                $this->generator->deleteServicePage($servicePage);
+
+                // Delete the service page record
+                $servicePage->delete();
+            } catch (\Exception $e) {
+                Log::error("Failed to delete service page", [
+                    'service_page_id' => $servicePage->id,
+                    'error' => $e->getMessage()
+                ]);
+                throw $e;
+            }
+        });
 
         return redirect()
             ->route('admin.service-pages.index')

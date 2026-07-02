@@ -13,21 +13,14 @@ return new class extends Migration {
 
             $table->string('city');
 
-            $table->enum('province', [
-                'punjab',
-                'sindh',
-                'balochistan',
-                'kpk',
-                'gilgit',
-                'kashmir',
-            ]);
+            $table->enum('province', config('services.provinces'));
 
             $table->text('excerpt')->nullable();
 
             $table->string('phone_1');
             $table->string('phone_2')->nullable();
 
-            $table->string('slug')->unique();
+            $table->string('slug')->unique()->index();
 
             $table->timestamps();
         });

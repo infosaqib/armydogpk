@@ -54,8 +54,8 @@
                     <td class="px-6 py-4 whitespace-nowrap">
                         <div
                             class="w-12 h-12 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0 border border-gray-200">
-                            @if($blog->image)
-                            <img class="w-full h-full object-cover" src="{{ asset($blog->image) }}"
+                            @if($blog->thumbnail)
+                            <img class="w-full h-full object-cover" src="{{ asset($blog->thumbnail) }}"
                                 alt="{{ $blog->title }}" />
                             @else
                             <div class="w-full h-full flex items-center justify-center bg-gray-200 text-gray-400">

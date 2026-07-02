@@ -28,6 +28,14 @@ class AuthController extends Controller
             ]);
         }
 
+        // VERIFY admin status AFTER authentication
+        if (!Auth::user()->is_admin) {
+            Auth::logout();
+            return back()->withErrors([
+                'email' => 'You do not have admin access.',
+            ]);
+        }
+
         $request->session()->regenerate();
 
         return redirect()->route('admin.dashboard');

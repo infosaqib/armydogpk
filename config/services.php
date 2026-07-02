@@ -35,4 +35,6 @@ return [
         ],
     ],
 
+    'provinces' => ['punjab', 'sindh', 'balochistan', 'kpk', 'gilgit', 'kashmir'],
+
 ];
