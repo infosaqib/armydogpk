@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('admin.layouts.app')
 
 @section('title', 'Admin Dashboard - Army Dog Center')
 @section('description', 'Admin dashboard for Army Dog Center.')
@@ -55,11 +55,13 @@
                 <div class="bg-white rounded-lg shadow p-6">
                     <h2 class="text-2xl font-bold mb-6">Quick Actions</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <a href="/services" class="bg-primary text-white p-4 rounded-lg hover:bg-amber-700 transition text-center">
+                        <a href="/services"
+                            class="bg-primary text-white p-4 rounded-lg hover:bg-amber-700 transition text-center">
                             <div class="text-2xl mb-2">📋</div>
                             <span class="font-semibold">View Services</span>
                         </a>
-                        <a href="/team" class="bg-dark text-white p-4 rounded-lg hover:bg-gray-900 transition text-center">
+                        <a href="/team"
+                            class="bg-dark text-white p-4 rounded-lg hover:bg-gray-900 transition text-center">
                             <div class="text-2xl mb-2">👥</div>
                             <span class="font-semibold">Team Members</span>
                         </a>

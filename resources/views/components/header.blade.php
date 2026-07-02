@@ -10,21 +10,15 @@
             <a href="/" class="hover:text-primary transition">Home</a>
             <a href="/services" class="hover:text-primary transition">Services</a>
             <a href="/about" class="hover:text-primary transition">About</a>
-            <a href="/team" class="hover:text-primary transition">Team</a>
+            <a href="/blog" class="hover:text-primary transition">Blog</a>
             <a href="/contact" class="hover:text-primary transition">Contact</a>
-            @auth
-                <a href="/dashboard" class="hover:text-primary transition">Dashboard</a>
-                <a href="/logout" class="hover:text-primary transition">Logout</a>
-            @endauth
-            @guest
-                <a href="/login" class="btn-primary">Login</a>
-            @endguest
         </div>
 
         <!-- Mobile Menu Button -->
         <button id="mobile-menu-btn" class="md:hidden text-white">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
             </svg>
         </button>
     </nav>
@@ -38,11 +32,11 @@
             <a href="/team" class="block py-2 hover:text-primary">Team</a>
             <a href="/contact" class="block py-2 hover:text-primary">Contact</a>
             @auth
-                <a href="/dashboard" class="block py-2 hover:text-primary">Dashboard</a>
-                <a href="/logout" class="block py-2 hover:text-primary">Logout</a>
+            <a href="/dashboard" class="block py-2 hover:text-primary">Dashboard</a>
+            <a href="/logout" class="block py-2 hover:text-primary">Logout</a>
             @endauth
             @guest
-                <a href="/login" class="block py-2 text-primary font-semibold">Login</a>
+            <a href="/login" class="block py-2 text-primary font-semibold">Login</a>
             @endguest
         </div>
     </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\ContactController;
@@ -17,9 +18,8 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/team', function () {
-    return view('team');
-})->name('team');
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+Route::get('/blogs/{slug}', [BlogController::class, 'show']);
 
 Route::get('/contact', function () {
     return view('contact');
@@ -35,10 +35,3 @@ Route::get('/register', [AuthController::class, 'showRegister'])->name('register
 Route::post('/register', [AuthController::class, 'register'])->name('register.post');
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
-// Protected Routes
-Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
