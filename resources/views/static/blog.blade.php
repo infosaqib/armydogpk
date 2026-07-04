@@ -43,7 +43,7 @@
                 </header>
 
                 <div class="prose prose-lg max-w-none">
-                    {!! \Illuminate\Support\Facades\Blade::sanitize($blog->content) !!}
+                    {!! $blog->content !!}
                 </div>
 
             </article>

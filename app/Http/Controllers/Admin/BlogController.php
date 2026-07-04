@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use App\Services\StaticSiteGenerator;
+use Mews\Purifier\Facades\Purifier;
 
 class BlogController extends Controller
 {
@@ -58,6 +59,8 @@ class BlogController extends Controller
             'title' => ['required', 'string', 'max:255'],
             'content' => ['required', 'string'],
         ]);
+
+        $validated['content'] = Purifier::clean($validated['content']);
         $blog = Blog::create($validated);
 
         $this->attachEditorImages($blog);
@@ -83,6 +86,8 @@ class BlogController extends Controller
             'title' => ['required', 'string', 'max:255'],
             'content' => ['required', 'string'],
         ]);
+
+        $validated['content'] = Purifier::clean($validated['content']);
 
         $blog->update($validated);
 
