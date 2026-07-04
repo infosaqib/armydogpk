@@ -13,157 +13,49 @@
 
         <!-- Province Filter -->
         <div class="flex flex-wrap justify-center gap-3 mb-12">
-            <button class="px-4 py-2 rounded-full bg-dark text-white text-sm font-semibold hover:bg-primary transition"
+            <button class="province-filter-btn px-4 py-2 rounded-full bg-dark text-white ..." data-province="all"
                 onclick="filterProvinces('all')">
                 All Provinces
             </button>
-            <button
-                class="px-4 py-2 rounded-full bg-gray-200 text-dark text-sm font-semibold hover:bg-primary hover:text-white transition"
-                onclick="filterProvinces('punjab')">
-                Punjab
+
+            @foreach($provinces as $province)
+            <button class="province-filter-btn px-4 py-2 rounded-full bg-gray-200 ..."
+                data-province="{{ $province['key'] }}" onclick="filterProvinces('{{ $province['key'] }}')">
+                {{ $province['name'] }}
             </button>
-            <button
-                class="px-4 py-2 rounded-full bg-gray-200 text-dark text-sm font-semibold hover:bg-primary hover:text-white transition"
-                onclick="filterProvinces('sindh')">
-                Sindh
-            </button>
-            <button
-                class="px-4 py-2 rounded-full bg-gray-200 text-dark text-sm font-semibold hover:bg-primary hover:text-white transition"
-                onclick="filterProvinces('kpk')">
-                KPK
-            </button>
-            <button
-                class="px-4 py-2 rounded-full bg-gray-200 text-dark text-sm font-semibold hover:bg-primary hover:text-white transition"
-                onclick="filterProvinces('balochistan')">
-                Balochistan
-            </button>
+            @endforeach
         </div>
 
         <!-- Service Locations Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            <!-- Punjab -->
-            <div class="location-card" data-province="punjab">
+            @foreach($provinces as $province)
+            @foreach($province['cities'] as $city)
+
+            <a href="{{ url('services/' . $city->slug . '.html') }}" class="location-card block"
+                data-province="{{ $province['key'] }}">
+
                 <div class="bg-white p-3 rounded-lg shadow-md hover:shadow-lg transition border-l-4 border-primary">
-                    <div class="flex items-start gap-4">
-
-                        <div class="">
-                            <h3 class="text-lg font-bold text-dark mb-1">Lahore, Punjab</h3>
-
-                        </div>
-                    </div>
+                    <h3 class="text-lg font-bold text-dark mb-1">
+                        {{ $city->city }}
+                    </h3>
                 </div>
-            </div>
 
-            <div class="location-card" data-province="punjab">
-                <div class="bg-white p-3 rounded-lg shadow-md hover:shadow-lg transition border-l-4 border-primary">
-                    <div class="flex items-start gap-4">
+            </a>
 
-                        <div class="">
-                            <h3 class="text-lg font-bold text-dark mb-1">Islamabad, Punjab</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+            @endforeach
 
-            <div class="location-card" data-province="punjab">
-                <div class="bg-white p-3 rounded-lg shadow-md hover:shadow-lg transition border-l-4 border-primary">
-                    <div class="flex items-start gap-4">
+        </div>
 
-                        <div class="">
-                            <h3 class="text-lg font-bold text-dark mb-1">Rawalpindi, Punjab</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div id="no-locations-message" class="hidden text-center py-12">
+            <h3 class="text-2xl font-semibold text-gray-700">
+                No service locations available.
+            </h3>
 
-            <!-- Sindh -->
-            <div class="location-card" data-province="sindh">
-                <div class="bg-white p-3 rounded-lg shadow-md hover:shadow-lg transition border-l-4 border-primary">
-                    <div class="flex items-start gap-4">
-
-                        <div class="">
-                            <h3 class="text-lg font-bold text-dark mb-1">Karachi, Sindh</h3>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="location-card" data-province="sindh">
-                <div class="bg-white p-3 rounded-lg shadow-md hover:shadow-lg transition border-l-4 border-primary">
-                    <div class="flex items-start gap-4">
-
-                        <div class="">
-                            <h3 class="text-lg font-bold text-dark mb-1">Hyderabad, Sindh</h3>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- KPK -->
-            <div class="location-card" data-province="kpk">
-                <div class="bg-white p-3 rounded-lg shadow-md hover:shadow-lg transition border-l-4 border-primary">
-                    <div class="flex items-start gap-4">
-
-                        <div class="">
-                            <h3 class="text-lg font-bold text-dark mb-1">Peshawar, KPK</h3>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Balochistan -->
-            <div class="location-card" data-province="balochistan">
-                <div class="bg-white p-3 rounded-lg shadow-md hover:shadow-lg transition border-l-4 border-primary">
-                    <div class="flex items-start gap-4">
-
-                        <div class="">
-                            <h3 class="text-lg font-bold text-dark mb-1">Quetta, Balochistan</h3>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Additional Locations -->
-            <div class="location-card" data-province="all">
-                <div class="bg-white p-3 rounded-lg shadow-md hover:shadow-lg transition border-l-4 border-primary">
-                    <div class="flex items-start gap-4">
-
-                        <div class="">
-                            <h3 class="text-lg font-bold text-dark mb-1">Faisalabad, Punjab</h3>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="location-card" data-province="all">
-                <div class="bg-white p-3 rounded-lg shadow-md hover:shadow-lg transition border-l-4 border-primary">
-                    <div class="flex items-start gap-4">
-
-                        <div class="">
-                            <h3 class="text-lg font-bold text-dark mb-1">Multan, Punjab</h3>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="location-card" data-province="all">
-                <div class="bg-white p-3 rounded-lg shadow-md hover:shadow-lg transition border-l-4 border-primary">
-                    <div class="flex items-start gap-4">
-
-                        <div class="">
-                            <h3 class="text-lg font-bold text-dark mb-1">Abbottabad, KPK</h3>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <p class="mt-2 text-gray-500">
+                We're expanding to this province soon.
+            </p>
         </div>
 
         <!-- Call to Action -->
@@ -176,31 +68,48 @@
 
 <script>
 function filterProvinces(province) {
+
     const cards = document.querySelectorAll('.location-card');
-    const buttons = document.querySelectorAll('button');
+    const buttons = document.querySelectorAll('.province-filter-btn');
+    const emptyMessage = document.getElementById('no-locations-message');
+
+    let visibleCount = 0;
 
     // Update button styles
-    buttons.forEach(btn => {
-        if (btn.textContent.toLowerCase().includes('all provinces') && province === 'all') {
-            btn.classList.add('bg-dark', 'text-white');
-            btn.classList.remove('bg-gray-200', 'text-dark');
-        } else if (btn.textContent.toLowerCase().includes(province)) {
-            btn.classList.add('bg-dark', 'text-white');
-            btn.classList.remove('bg-gray-200', 'text-dark');
-        } else if (province !== 'all') {
-            btn.classList.remove('bg-dark', 'text-white');
-            btn.classList.add('bg-gray-200', 'text-dark');
+    buttons.forEach(button => {
+
+        const value = button.dataset.province;
+
+        if (value === province) {
+            button.classList.remove('bg-gray-200', 'text-dark');
+            button.classList.add('bg-dark', 'text-white');
+        } else {
+            button.classList.remove('bg-dark', 'text-white');
+            button.classList.add('bg-gray-200', 'text-dark');
         }
+
     });
 
-    // Show/hide cards
+    // Filter cards
     cards.forEach(card => {
-        const cardProvince = card.getAttribute('data-province');
+
+        const cardProvince = card.dataset.province;
+
         if (province === 'all' || cardProvince === province) {
-            card.style.display = 'block';
+            card.style.display = '';
+            visibleCount++;
         } else {
             card.style.display = 'none';
         }
+
     });
+
+    // Empty state
+    if (visibleCount === 0) {
+        emptyMessage.classList.remove('hidden');
+    } else {
+        emptyMessage.classList.add('hidden');
+    }
+
 }
 </script>
