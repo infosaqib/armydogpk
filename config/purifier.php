@@ -29,9 +29,10 @@ return [
             'CSS.AllowedProperties'    => 'font,font-size,font-weight,font-style,font-family,text-decoration,padding-left,color,background-color,text-align',
             'AutoFormat.AutoParagraph' => true,
             'AutoFormat.RemoveEmpty'   => true,
-            'HTML.nofollow'              => true,
-            'HTML.noreferrer'             => true,
-            'HTML.noopener'             => true,
+            'HTML.TargetBlank' => true,
+            'HTML.Nofollow' => true,
+            'HTML.TargetNoreferrer' => true,
+            'HTML.TargetNoopener' => true,
         ],
         'test'    => [
             'Attr.EnableID' => 'true',
