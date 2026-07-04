@@ -101,7 +101,7 @@
 @include('components.gallery')
 
 <!-- Cities we serve -->
-@include('components.where-we-serve')
+<x-where-we-serve />
 
 <!-- Stats Section -->
 <section class="py-20 bg-primary text-white">
