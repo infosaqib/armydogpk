@@ -7,25 +7,26 @@
         </div>
 
         <div class="hidden md:flex gap-6">
-            <a href="{{route('home')}}" class="hover:text-primary transition">Home</a>
-
+            <a href="{{route('home')}}" class="py-2 hover:text-primary transition">Home</a>
+        
             <div class="relative group">
-                <a href="{{ route('services') }}" class="hover:text-primary transition inline-flex items-center gap-1">
+                <a href="{{ route('services') }}" class="hover:text-primary transition inline-flex items-center gap-1 py-2">
                     Services
                     <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor"
                         viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
                 </a>
-
-                <div class="absolute right-0 top-full pt-3 hidden group-hover:block z-50 w-[900px]">
+        
+                <div
+                    class="absolute left-[50%] translate-x-[-70%] top-full pt-3 hidden group-hover:block z-50 w-[90vw] md:w-[70vw] lg:w-[900px]">
                     <x-services-menu />
                 </div>
             </div>
-
-            <a href="{{route('about')}}" class="hover:text-primary transition">About</a>
-            <a href="{{route('blog')}}" class="hover:text-primary transition">Blog</a>
-            <a href="{{route('contact')}}" class="hover:text-primary transition">Contact</a>
+        
+            <a href="{{route('about')}}" class="py-2 hover:text-primary transition">About</a>
+            <a href="{{route('blog')}}" class="py-2 hover:text-primary transition">Blog</a>
+            <a href="{{route('contact')}}" class="py-2 hover:text-primary transition">Contact</a>
         </div>
 
         <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-white focus:outline-none">
