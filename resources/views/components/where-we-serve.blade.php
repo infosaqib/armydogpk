@@ -1,4 +1,4 @@
-<section class="py-20 bg-gradient-to-b from-white to-gray-50">
+<section class="py-6 md:py-20 bg-gradient-to-b from-white to-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Header -->
         <div class="text-center mb-16">

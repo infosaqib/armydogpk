@@ -8,24 +8,29 @@
 <!-- Hero Section -->
 <section class="bg-gradient-to-r from-dark to-gray-800 text-white py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
+        <div class="flex flex-col-reverse md:flex-row gap-12 items-center">
+
+            <div class="w-full md:w-1/2">
                 <h1 class="text-5xl font-bold mb-6">Professional Dog Training & Protection</h1>
-                <p class="text-xl text-gray-300 mb-8">Expert military and civilian dog training services in Pakistan.
-                    Available 24/7 for emergency response.</p>
+                <p class="text-xl text-gray-300 mb-8">
+                    Expert military and civilian dog training services in Pakistan. Available 24/7 for emergency
+                    response.
+                </p>
                 <div class="flex gap-4">
-                    <a href="/contact" class="btn-primary">Call us - 03000000000</a>
+                    <a href="{{ route('contact') }}" class="btn-primary">Call us - 03000000000</a>
                 </div>
             </div>
-            <div class="text-center">
-                <img src="https://dummyimage.com/600x360" alt="">
+
+            <div class="w-full md:w-1/2 text-center">
+                <img src="https://dummyimage.com/600x360" alt="" class="w-full h-auto">
             </div>
+
         </div>
     </div>
 </section>
 
 <!-- About Section -->
-<section class="py-20 bg-white">
+<section class="py-6 md:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div class="flex justify-center">
@@ -33,8 +38,8 @@
                     class="w-full max-w-md rounded-lg shadow-lg">
             </div>
             <div>
-                <h2 class="text-4xl text-primary font-bold mb-4 mt-2">
-                    About Us
+                <h2 class="text-center md:text-left text-4xl font-bold mb-4 mt-2">
+                    About <span class="text-primary">Us</span>
                 </h2>
                 <p class="text-gray-700 mb-6 leading-relaxed">
                     Our elite tactical dogs undergo rigorous training programs designed specifically for high-pressure
@@ -51,7 +56,7 @@
 </section>
 
 <!-- Services Section -->
-<section id="services" class="py-20 bg-white">
+<section id="services" class="py-6 md:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-4xl font-bold text-center mb-4">
             Our <span class="text-primary">Services</span>
@@ -104,7 +109,7 @@
 <x-where-we-serve />
 
 <!-- Stats Section -->
-<section class="py-20 bg-primary text-white">
+<section class="py-6 md:py-20 bg-primary text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div class="text-center">

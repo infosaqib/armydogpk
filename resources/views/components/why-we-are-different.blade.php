@@ -1,5 +1,5 @@
 <!-- Why We Are Different Section -->
-<section class="py-20 bg-gray-50">
+<section class="py-6 md:py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-4xl font-bold text-center mb-4">
             Why We Are <span class="text-primary">Different</span>

@@ -37,7 +37,7 @@
         <h2 class="font-manrope text-4xl font-bold text-gray-900 text-center mb-16">Our latest blog</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
             @foreach($blogs as $blog)
-            <div class="group w-full border border-gray-700 rounded-2xl p-4 bg-zinc-900">
+            <div class="group w-full border border-gray-700 rounded-2xl p-1 md:p-2 bg-gray-100">
                 <div class="flex items-center">
                     <img src="{{ $blog->thumbnail }}" alt="{{ $blog->title }}"
                         class="rounded-t-2xl w-full h-60 object-cover">

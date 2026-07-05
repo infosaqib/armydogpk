@@ -15,7 +15,7 @@
         <p class="text-sm text-gray-500 mt-1">Manage and publish your website service layouts.</p>
     </div>
     <a href="{{ route('admin.service-pages.create') }}"
-        class="inline-flex items-center gap-2 bg-primary text-on-primary px-5 py-3 rounded-lg font-label-md text-sm font-semibold hover:shadow-lg hover:shadow-primary/20 transition-all duration-200 active:scale-95">
+        class="inline-flex items-center gap-2 bg-primary text-white px-5 py-3 rounded-lg font-label-md text-sm font-semibold hover:shadow-lg hover:shadow-primary/20 transition-all duration-200 active:scale-95">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4" />
         </svg>
@@ -40,8 +40,6 @@
                 <tr class="bg-surface-container-low border-b border-outline-variant">
                     <th class="px-6 py-4 font-medium text-sm text-on-surface-variant uppercase tracking-wider w-24">
                         Image</th>
-                    <th class="px-6 py-4 font-medium text-sm text-on-surface-variant uppercase tracking-wider">Title
-                    </th>
                     <th class="px-6 py-4 font-medium text-sm text-on-surface-variant uppercase tracking-wider">
                         City</th>
                     <th class="px-6 py-4 font-medium text-sm text-on-surface-variant uppercase tracking-wider">Date
@@ -71,13 +69,6 @@
                             </div>
                             @endif
                         </div>
-                    </td>
-
-                    <td class="px-6 py-4">
-                        <p
-                            class="font-semibold text-on-surface group-hover:text-primary transition-colors max-w-md break-words">
-                            {{ $service_page->title }}
-                        </p>
                     </td>
                     <td class="px-6 py-4">
                         <p
