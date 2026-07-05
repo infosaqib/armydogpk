@@ -8,7 +8,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-white text-gray-900">
-    @include('components.header')
+    <x-header />
 
     <main>
         @yield('content')
