@@ -11,7 +11,7 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
-Route::get('/services', function () {
+Route::get('/service', function () {
     return view('services');
 })->name('services');
 
@@ -42,7 +42,7 @@ Route::get('/blogs/{slug}', function ($slug) {
 
 Route::get('/contact', function () {
     return view('contact');
-})->name('contact.form');
+})->name('contact');
 
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 

@@ -43,7 +43,7 @@
 
 
 <!-- Areas we serve -->
-@include('components.where-we-serve')
+<x-where-we-serve />
 
 <!-- Areas we serve -->
 @include('components.why-we-are-different')
