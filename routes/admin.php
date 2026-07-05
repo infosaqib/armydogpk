@@ -35,8 +35,4 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::delete('images/{image}', [ImageController::class, 'destroy'])
         ->name('images.destroy');
-
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('dashboard');
 });
