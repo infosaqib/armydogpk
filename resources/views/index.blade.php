@@ -1,7 +1,7 @@
 @extends('layout')
 
-@section('title', 'Home - Army Dog Center')
-@section('description', 'Professional dog training, protection, and search & rescue services.')
+@section('title', 'Army Dog Center Pakistan | 03457125252, 03336937508')
+@section('description', 'Army Dog Center trains and supplies dogs across Pakistan for home security, tracking, and rescue work, backed by a team on call every day of the year. Call now 03005794720.')
 
 @section('content')
 
@@ -12,9 +12,9 @@
 
             <div class="w-full md:w-1/2">
                 <h1 class="text-5xl font-bold mb-6">Professional Dog Training & Protection</h1>
-                <p class="text-xl text-gray-300 mb-8">
-                    Expert military and civilian dog training services in Pakistan. Available 24/7 for emergency
-                    response.
+                <p class="text-xl text-gray-300 mb-8" lang="ur" dir="rtl">
+                    چوری، ڈکیتی، قتل اور اغوا جیسے مقدمات کے سراغ کے لیے آرمی ڈاگ سینٹر تربیت یافتہ کھوجی
+                    کتے فراہم کرتا ہے۔ ہماری ٹیم پورے پاکستان میں چوبیس گھنٹے آپ کی خدمت کے لیے حاضر ہے۔
                 </p>
                 <div class="flex gap-4">
                     <a href="{{ route('contact') }}" class="btn-primary">Call us - 03000000000</a>
@@ -42,13 +42,12 @@
                     About <span class="text-primary">Us</span>
                 </h2>
                 <p class="text-gray-700 mb-6 leading-relaxed">
-                    Our elite tactical dogs undergo rigorous training programs designed specifically for high-pressure
-                    security and emergency response situations. Each canine is carefully selected, bred, and trained to
-                    meet the strictest international standards.
+                    Our dogs go through hard, focused training so they can handle tough security and
+                    rescue jobs. We pick each dog with care and train it to reach a high, trusted standard.
                 </p>
                 <p class="text-gray-700 mb-8 leading-relaxed">
-                    With specialized handlers accompanying each dog, we ensure seamless integration with existing
-                    security protocols and guaranteed success in real-world operations.
+                    Every dog works with its own trained handler, so it fits in easily with your security
+                    team and gets the job done in real situations.
                 </p>
             </div>
         </div>
