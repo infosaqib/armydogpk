@@ -1,7 +1,7 @@
 @extends('layout')
 
-@section('title', 'Services - Army Dog Center')
-@section('description', 'Detection, Protection, and Search & Rescue dog training services.')
+@section('title', 'Our Services | Army Dog Center Pakistan')
+@section('description', 'Army Dog Center provides trained dogs and skilled handlers across Pakistan for detection, protection, tracking, and search & rescue work. Call 03005794720.')
 
 @section('content')
 <!-- Hero -->
@@ -25,15 +25,15 @@
                 </h1>
 
                 <p class="text-base md:text-lg leading-relaxed text-white/95 max-w-xl mx-auto lg:mx-0">
-                    As a leading express delivery service provider, DEX has the longest operating history and highest
-                    delivery satisfaction score among all major regional logistics players in South Asia.
+                    Army Dog Center offers trained dogs and skilled handlers for security, tracking, and
+                    rescue work across Pakistan, ready to help wherever you need us.
                 </p>
             </div>
             <!-- Left -->
             <div class="flex justify-center lg:justify-start">
                 <img src="https://dummyimage.com/600x360"
                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=800&q=80';"
-                    alt="DEX delivery rider" class="w-full max-w-[560px] h-auto object-contain drop-shadow-2xl" />
+                    alt="Army Dog Center trained security dog" class="w-full max-w-[560px] h-auto object-contain drop-shadow-2xl" />
             </div>
 
         </div>
