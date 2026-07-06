@@ -7,8 +7,8 @@
                 Why <span class="text-primary">Choose Us</span>
             </h2>
             <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                Army Dog Center Pakistan offers unmatched expertise, reliability, and results. Here&apos;s why clients
-                trust us with their security needs.
+                Army Dog Center works hard to give you skilled, dependable service you can count on.
+                Here are a few reasons clients keep choosing us for their security needs.
             </p>
         </div>
 
@@ -27,8 +27,8 @@
                     </div>
                     <div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">Military-Grade Excellence</h3>
-                        <p class="text-gray-600 text-sm">Trained using classified military protocols by former defense
-                            personnel with active combat experience.</p>
+                        <p class="text-gray-600 text-sm">Our dogs are trained the same way military dogs are,
+                            by trainers who have served in the field themselves.</p>
                     </div>
                 </div>
 

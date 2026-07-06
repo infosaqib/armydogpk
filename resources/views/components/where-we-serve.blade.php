@@ -6,7 +6,7 @@
                 Where We <span class="text-primary">Serve</span>
             </h2>
             <p class="text-gray-600 max-w-2xl mx-auto">
-                Army Dog Centre provides professional dog training and security services throughout Pakistan with rapid
+                Army Dog Center provides professional dog training and security services throughout Pakistan with rapid
                 deployment capabilities in every province and major city.
             </p>
         </div>
@@ -19,10 +19,10 @@
             </button>
 
             @foreach($provinces as $province)
-            <button class="province-filter-btn px-4 py-2 rounded-full bg-gray-200 ..."
-                data-province="{{ $province['key'] }}" onclick="filterProvinces('{{ $province['key'] }}')">
-                {{ $province['name'] }}
-            </button>
+                <button class="province-filter-btn px-4 py-2 rounded-full bg-gray-200 ..."
+                    data-province="{{ $province['key'] }}" onclick="filterProvinces('{{ $province['key'] }}')">
+                    {{ $province['name'] }}
+                </button>
             @endforeach
         </div>
 
@@ -30,20 +30,20 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
             @foreach($provinces as $province)
-            @foreach($province['cities'] as $city)
+                @foreach($province['cities'] as $city)
 
-            <a href="{{ url('services/' . $city->slug . '.html') }}" class="location-card block"
-                data-province="{{ $province['key'] }}">
+                    <a href="{{ url('services/' . $city->slug . '.html') }}" class="location-card block"
+                        data-province="{{ $province['key'] }}">
 
-                <div class="bg-white p-3 rounded-lg shadow-md hover:shadow-lg transition border-l-4 border-primary">
-                    <h3 class="text-lg font-bold text-dark mb-1">
-                        {{ $city->city }}
-                    </h3>
-                </div>
+                        <div class="bg-white p-3 rounded-lg shadow-md hover:shadow-lg transition border-l-4 border-primary">
+                            <h3 class="text-lg font-bold text-dark mb-1">
+                                {{ $city->city }}
+                            </h3>
+                        </div>
 
-            </a>
+                    </a>
 
-            @endforeach
+                @endforeach
             @endforeach
 
         </div>
@@ -67,49 +67,49 @@
 </section>
 
 <script>
-function filterProvinces(province) {
+    function filterProvinces(province) {
 
-    const cards = document.querySelectorAll('.location-card');
-    const buttons = document.querySelectorAll('.province-filter-btn');
-    const emptyMessage = document.getElementById('no-locations-message');
+        const cards = document.querySelectorAll('.location-card');
+        const buttons = document.querySelectorAll('.province-filter-btn');
+        const emptyMessage = document.getElementById('no-locations-message');
 
-    let visibleCount = 0;
+        let visibleCount = 0;
 
-    // Update button styles
-    buttons.forEach(button => {
+        // Update button styles
+        buttons.forEach(button => {
 
-        const value = button.dataset.province;
+            const value = button.dataset.province;
 
-        if (value === province) {
-            button.classList.remove('bg-gray-200', 'text-dark');
-            button.classList.add('bg-dark', 'text-white');
+            if (value === province) {
+                button.classList.remove('bg-gray-200', 'text-dark');
+                button.classList.add('bg-dark', 'text-white');
+            } else {
+                button.classList.remove('bg-dark', 'text-white');
+                button.classList.add('bg-gray-200', 'text-dark');
+            }
+
+        });
+
+        // Filter cards
+        cards.forEach(card => {
+
+            const cardProvince = card.dataset.province;
+
+            if (province === 'all' || cardProvince === province) {
+                card.style.display = '';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+
+        });
+
+        // Empty state
+        if (visibleCount === 0) {
+            emptyMessage.classList.remove('hidden');
         } else {
-            button.classList.remove('bg-dark', 'text-white');
-            button.classList.add('bg-gray-200', 'text-dark');
+            emptyMessage.classList.add('hidden');
         }
 
-    });
-
-    // Filter cards
-    cards.forEach(card => {
-
-        const cardProvince = card.dataset.province;
-
-        if (province === 'all' || cardProvince === province) {
-            card.style.display = '';
-            visibleCount++;
-        } else {
-            card.style.display = 'none';
-        }
-
-    });
-
-    // Empty state
-    if (visibleCount === 0) {
-        emptyMessage.classList.remove('hidden');
-    } else {
-        emptyMessage.classList.add('hidden');
     }
-
-}
 </script>

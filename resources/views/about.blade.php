@@ -1,7 +1,7 @@
 @extends('layout')
 
-@section('title', 'About Us - Army Dog Center')
-@section('description', 'Learn about Army Dog Center, our mission, vision, and values.')
+@section('title', 'About Us | Army Dog Center Pakistan')
+@section('description', 'Army Dog Center has trained dogs for the military, police, and private clients across Pakistan for over 20 years. Call 03005794720 to learn more.')
 
 @section('content')
 <!-- Hero -->
@@ -25,15 +25,15 @@
                 </h1>
 
                 <p class="text-base md:text-lg leading-relaxed text-white/95 max-w-xl mx-auto lg:mx-0">
-                    As a leading express delivery service provider, DEX has the longest operating history and highest
-                    delivery satisfaction score among all major regional logistics players in South Asia.
+                    For over 20 years, Army Dog Center has trained dogs and handlers for security,
+                    tracking, and rescue work, earning the trust of clients across Pakistan.
                 </p>
             </div>
             <!-- Left-->
             <div class="flex justify-center lg:justify-start">
                 <img src="https://dummyimage.com/600x360"
                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=800&q=80';"
-                    alt="DEX delivery rider" class="w-full max-w-[560px] h-auto object-contain drop-shadow-2xl" />
+                    alt="Army Dog Center trained security dog" class="w-full max-w-[560px] h-auto object-contain drop-shadow-2xl" />
             </div>
 
         </div>
@@ -47,13 +47,14 @@
                 <div>
                     <h2 class="section-title">Our Story</h2>
                     <p class="text-gray-600 mb-4">
-                        Founded in 2004, Army Dog Center has been at the forefront of professional dog training in Pakistan.
-                        What started as a small military training facility has grown into one of the region's most respected
-                        centers for canine excellence.
+                        Army Dog Center opened its doors in 2004. We began as a small military dog training
+                        unit and have since grown into one of the most trusted names in dog training in the
+                        region.
                     </p>
                     <p class="text-gray-600 mb-4">
-                        With over 20 years of experience, we have trained hundreds of dogs for military, law enforcement,
-                        and civilian security purposes. Our commitment to excellence and animal welfare sets us apart.
+                        Over the past 20+ years, we have trained hundreds of dogs that now serve the army,
+                        the police, and private homes and businesses. We care about doing this well and
+                        treating our dogs right, and that is what sets us apart.
                     </p>
                     <p class="text-gray-600">
                         We believe that every dog has the potential to excel when trained with patience, expertise, and
@@ -76,8 +77,8 @@
                 <div class="bg-white p-8 rounded-lg shadow">
                     <h3 class="text-2xl font-bold text-primary mb-4">Mission</h3>
                     <p class="text-gray-600">
-                        To provide world-class dog training services that enhance security, safety, and quality of life for
-                        our clients while maintaining the highest standards of animal care and welfare.
+                        To train dogs that keep our clients secure and give them peace of mind, while
+                        always treating our dogs with care and respect.
                     </p>
                 </div>
 

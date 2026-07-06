@@ -1,7 +1,7 @@
 @extends('layout')
 
-@section('title', 'Our Team - Army Dog Center')
-@section('description', 'Meet the expert trainers and handlers at Army Dog Center.')
+@section('title', 'Blog | Army Dog Center Pakistan')
+@section('description', 'Read news, tips, and updates from Army Dog Center on dog training, security, and rescue work across Pakistan. Call 03005794720.')
 
 @section('content')
 <!-- Hero Section -->
