@@ -55,6 +55,6 @@ class Blog extends Model
             return asset('storage/' . $image->path);
         }
 
-        return asset('images/default-blog.png');
+        return asset('images/default-blog.jpeg');
     }
 }

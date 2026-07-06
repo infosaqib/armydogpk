@@ -4,39 +4,30 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Army Dog Centre {{ $servicePage->city }} - Services</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Army Dog Center {{ $servicePage->city }} - Services</title>
     <meta name="description"
-        content="Professional Army Dog Centre services in {{ $servicePage->city }}, {{ ucfirst($servicePage->province) }}. Security dogs, investigation, tracking, detection and emergency response services.">
+        content="Army Dog Center in {{ $servicePage->city }}, {{ ucfirst($servicePage->province) }} offers trained guard dogs, investigation help, tracking, detection and 24/7 emergency support.">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="{{ url('services/' . $servicePage->slug . '.html') }}">
 
-    <meta property="og:title" content="Army Dog Centre {{ $servicePage->city }}">
+    <meta property="og:title" content="Army Dog Center {{ $servicePage->city }}">
     <meta property="og:description"
-        content="Professional canine security and investigation services in {{ $servicePage->city }}.">
+        content="Reliable dog-based security and investigation help in {{ $servicePage->city }}.">
     <meta property="og:image" content="{{ asset('storage/' . $servicePage->image->path) }}">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url('services/' . $servicePage->slug . '.html') }}">
 
-    <style>
-    body {
-        font-family: 'Inter', sans-serif;
-    }
-    </style>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Army Dog Center {{ $servicePage->city }}">
+    <meta name="twitter:description"
+        content="Reliable dog-based security and investigation help in {{ $servicePage->city }}.">
+    <meta name="twitter:image" content="{{ asset('storage/' . $servicePage->image->path) }}">
 
-    <script>
-    tailwind.config = {
-        theme: {
-            extend: {
-                colors: {
-                    primary: '#f57224',
-                }
-            }
-        }
-    }
-    </script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="bg-white text-gray-900 antialiased">
+    <x-header />
 
     <section class="relative w-full overflow-hidden">
         <div class="relative min-h-[400px]">
@@ -47,11 +38,11 @@
 
             <div class="relative z-10 max-w-4xl mx-auto px-6 text-center pt-8 lg:pt-20 pb-16">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                    Army Dog Centre {{ $servicePage->city }}
+                    Army Dog Center {{ $servicePage->city }}
                 </h1>
 
                 <p class="mt-6 text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
-                    Professional canine services and security solutions in
+                    Trusted dog services and security help for
                     {{ $servicePage->city }}, {{ ucfirst($servicePage->province) }}
                 </p>
                 <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -75,18 +66,18 @@
                     Our Services in <span class="text-primary">{{ $servicePage->city }}</span>
                 </h2>
                 <p class="mt-4 text-gray-600 leading-relaxed">
-                    Army Dog Centre provides elite canine services throughout
+                    Army Dog Center offers top dog services all over
                     {{ $servicePage->city }}, {{ ucfirst($servicePage->province) }}.
-                    Our team of experts and highly trained dogs are available
-                    24/7 for emergency response and security needs.
+                    Our skilled team and well-trained dogs are ready 24/7 to
+                    help with emergencies and keep you safe.
                 </p>
 
                 <ul class="mt-8 space-y-4">
                     @foreach ([
-                    "Investigation & Evidence Detection Services in {$servicePage->city}",
-                    "Security & Protection Services in {$servicePage->city}",
-                    "Specialized Search & Tracking Operations in {$servicePage->city}",
-                    "24/7 Emergency Response Team in {$servicePage->city}",
+                    "Finding Evidence & Investigation Help in {$servicePage->city}",
+                    "Guard Dogs for Safety & Protection in {$servicePage->city}",
+                    "Search & Tracking Services in {$servicePage->city}",
+                    "24/7 Emergency Help Team in {$servicePage->city}",
                     ] as $service)
                     <li class="flex items-start gap-3 text-gray-800">
                         <span class="mt-1 text-primary flex-shrink-0">
@@ -103,7 +94,7 @@
 
             <div class="flex justify-center lg:justify-end">
                 <img src="{{ asset('storage/' . $servicePage->image->path) }}"
-                    alt="Army Dog Centre {{ $servicePage->city }}"
+                    alt="Army Dog Center {{ $servicePage->city }}"
                     class="rounded-xl shadow-xl max-w-full h-auto object-cover max-h-[350px]">
             </div>
         </div>
@@ -129,7 +120,7 @@
     <section class="bg-slate-50 py-20">
         <div class="mx-auto max-w-6xl px-6">
             <h2 class="text-center text-2xl sm:text-3xl font-bold text-gray-900">
-                Why Choose Army Dog Centre in
+                Why Choose Army Dog Center in
                 <span class="text-primary">{{ $servicePage->city }}</span>
             </h2>
 
@@ -137,18 +128,18 @@
                 @foreach ([
                 [
                 'title' => 'Local Expertise',
-                'desc' => "Our team has extensive knowledge of {$servicePage->city} and surrounding areas for rapid
-                response and effective operations."
+                'desc' => "Our team knows {$servicePage->city} and the nearby areas well, so we can respond fast
+                and get the job done right."
                 ],
                 [
                 'title' => 'Fast Response Time',
-                'desc' => "Our strategically positioned teams in {$servicePage->city} ensure quick deployment for
-                emergencies and urgent security needs."
+                'desc' => "We keep our teams close by in {$servicePage->city}, so we can reach you quickly during
+                emergencies or urgent security needs."
                 ],
                 [
                 'title' => 'Community Trust',
-                'desc' => "We've built strong relationships with local authorities and businesses in
-                {$servicePage->city} for seamless collaboration."
+                'desc' => "We have good working relationships with local authorities and businesses in
+                {$servicePage->city}, which helps us work together smoothly."
                 ],
                 ] as $item)
                 <div class="rounded-lg bg-white p-7 shadow-sm border border-gray-100">
@@ -160,6 +151,7 @@
         </div>
     </section>
 
+    @include('components.footer')
 </body>
 
 </html>
