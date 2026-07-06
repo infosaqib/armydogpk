@@ -1,7 +1,7 @@
 @extends('layout')
 
-@section('title', 'Contact Us - Army Dog Center')
-@section('description', 'Get in touch with Army Dog Center. Available 24/7 for emergency inquiries.')
+@section('title', 'Contact Us | Army Dog Center Pakistan')
+@section('description', 'Get in touch with Army Dog Center for trained dogs, security, and rescue help across Pakistan. Call 03457125252, 03336937508, or 03005794720.')
 
 @section('content')
 
@@ -18,8 +18,8 @@
             <div class="relative z-10 mx-auto max-w-3xl px-6 pt-20 text-center">
                 <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">Contact Us</h1>
                 <p class="mx-auto mt-4 max-w-xl text-base text-gray-300 sm:text-lg">
-                    We use an agile approach to test assumptions and connect with the needs of your audience early and
-                    often.
+                    Reach out to Army Dog Center for trained dogs, security help, or rescue support
+                    anywhere in Pakistan. Our team is ready to answer your questions.
                 </p>
             </div>
         </div>
@@ -46,7 +46,7 @@
                             <label for="email" class="mb-2 block text-sm font-medium text-gray-900">Your email</label>
                             <input type="email" id="email"
                                 class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:ring-blue-500 focus:outline-none"
-                                placeholder="name@flowbite.com" />
+                                placeholder="name@example.com" />
                         </div>
                         <div>
                             <label for="phone" class="mb-2 block text-sm font-medium text-gray-900">Phone Number</label>
@@ -63,6 +63,7 @@
                             placeholder="Leave a comment..."></textarea>
                     </div>
 
+                    {{--
                     <div class="flex items-start gap-2">
                         <input type="checkbox" id="terms"
                             class="mt-0.5 h-4 w-4 rounded border-gray-300 bg-gray-50 text-blue-600 focus:ring-blue-500" />
@@ -74,6 +75,7 @@
                                 Statement</a>.
                         </label>
                     </div>
+                    --}}
 
                     <button type="submit"
                         class="rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300">
@@ -98,10 +100,10 @@
                     </div>
                     <h3 class="mb-2 text-lg font-semibold text-gray-900">Email us:</h3>
                     <p class="mx-auto mb-3 max-w-xs text-sm text-gray-600">
-                        Email us for general queries, including marketing and partnership opportunities.
+                        Email us with any question about our dogs, training, or services.
                     </p>
-                    <a href="mailto:hello@flowbite.com" class="text-sm font-medium text-blue-700 hover:underline">
-                        hello@flowbite.com
+                    <a href="mailto:contact@armydogpk.com" class="text-sm font-medium text-blue-700 hover:underline">
+                        contact@armydogpk.com
                     </a>
                 </div>
 
@@ -114,28 +116,37 @@
                     </div>
                     <h3 class="mb-2 text-lg font-semibold text-gray-900">Call us:</h3>
                     <p class="mx-auto mb-3 max-w-xs text-sm text-gray-600">
-                        Call us to speak to a member of our team. We are always happy to help.
+                        Give us a call any time, day or night, and our team will be glad to help.
                     </p>
-                    <a href="tel:+16467865060" class="text-sm font-medium text-blue-700 hover:underline">
-                        +1 (646) 786-5060
-                    </a>
+                    <div class="flex flex-col gap-1">
+                        <a href="tel:+923457125252" class="text-sm font-medium text-blue-700 hover:underline">
+                            0345-7125252
+                        </a>
+                        <a href="tel:+923336937508" class="text-sm font-medium text-blue-700 hover:underline">
+                            0333-6937508
+                        </a>
+                        <a href="tel:+923005794720" class="text-sm font-medium text-blue-700 hover:underline">
+                            0300-5794720
+                        </a>
+                    </div>
                 </div>
 
                 <div class="flex flex-col items-center">
                     <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100 text-gray-700">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="9" />
-                            <circle cx="12" cy="12" r="3" />
-                            <path d="M5.6 5.6l3.2 3.2M15.2 15.2l3.2 3.2M18.4 5.6l-3.2 3.2M8.8 15.2l-3.2 3.2" />
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                     </div>
-                    <h3 class="mb-2 text-lg font-semibold text-gray-900">Support</h3>
+                    <h3 class="mb-2 text-lg font-semibold text-gray-900">Location</h3>
                     <p class="mx-auto mb-3 max-w-xs text-sm text-gray-600">
-                        Email us for general queries, including marketing and partnership opportunities.
+                        We serve clients across Pakistan, with trained teams ready in every province and
+                        major city.
                     </p>
-                    <a href="#"
+                    <a href="{{ route('services') }}"
                         class="inline-block rounded-lg border border-blue-700 px-4 py-2 text-sm font-medium text-blue-700 transition hover:bg-blue-50">
-                        Support center
+                        View Our Services
                     </a>
                 </div>
 
