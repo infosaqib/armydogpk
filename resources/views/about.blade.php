@@ -31,9 +31,11 @@
             </div>
             <!-- Left-->
             <div class="flex justify-center lg:justify-start">
-                <img src="https://dummyimage.com/600x360"
-                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=800&q=80';"
-                    alt="Army Dog Center trained security dog" class="w-full max-w-[560px] h-auto object-contain drop-shadow-2xl" />
+                <div class="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="{{ asset('images/site_images/about-hero-police-k9-airport-field-patrol.jpeg') }}"
+                        alt="Army Dog Center police K9 dogs on duty at the airport, a rural property search, and a field patrol"
+                        width="600" height="360" class="w-full h-64 sm:h-72 md:h-80 object-cover" loading="lazy" />
+                </div>
             </div>
 
         </div>

@@ -22,9 +22,9 @@
             </div>
 
             <div class="w-full md:w-1/2 text-center">
-                <img src="https://dummyimage.com/600x360"
-                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=800&q=80';"
-                    alt="Army Dog Center trained security dog" class="w-full h-auto">
+                <img src="{{ asset('images/site_images/home-hero-k9-search-rescue-dog-handler.jpeg') }}"
+                    alt="Army Dog Center K9 search and rescue dog inspecting luggage with its police handler"
+                    width="600" height="360" class="w-full h-auto" loading="eager">
             </div>
 
         </div>
@@ -36,8 +36,9 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div class="flex justify-center">
-                <img src="https://dummyimage.com/600x360" alt="Elite Tactical Dog"
-                    class="w-full max-w-md rounded-lg shadow-lg">
+                <img src="{{ asset('images/site_images/about-us-k9-dogs-luggage-search.jpeg') }}"
+                    alt="Army Dog Center trained K9 dogs searching luggage alongside their handler"
+                    width="600" height="360" class="w-full max-w-md rounded-lg shadow-lg" loading="lazy">
             </div>
             <div>
                 <h2 class="text-center md:text-left text-4xl font-bold mb-4 mt-2">
@@ -110,7 +111,7 @@
 <x-where-we-serve />
 
 <!-- Stats Section -->
-<section class="py-6 md:py-20 bg-primary text-white">
+<!-- <section class="py-6 md:py-20 bg-primary text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div class="text-center">
@@ -131,7 +132,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- Why Our Dogs Section -->
 @include('components.why-choose-us')
