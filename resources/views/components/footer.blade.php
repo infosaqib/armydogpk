@@ -61,7 +61,6 @@
                     <p>📞 <a href="tel:+923457125252" class="hover:text-primary">03457125252</a></p>
                     <p>📞 <a href="tel:+923336937508" class="hover:text-primary">03336937508</a></p>
                     <p>📞 <a href="tel:+923005794720" class="hover:text-primary">03005794720</a></p>
-                    </p>
                 </div>
             </div>
         </div>

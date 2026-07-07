@@ -1,9 +1,10 @@
 <header class="bg-dark text-white shadow-lg"
     x-data="{ mobileMenuOpen: false, mobileServicesOpen: false, activeProvince: null }">
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center"
+        aria-label="Main navigation">
         <div class="flex items-center gap-2">
             <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center font-bold text-lg">🐕</div>
-            <a href="{{route('home')}}" class="font-bold text-xl">Army Dog Center</a>
+            <a href="{{route('home')}}" class="font-bold text-xl" rel="home">Army Dog Center Pakistan</a>
         </div>
 
         <div class="hidden md:flex gap-6">
