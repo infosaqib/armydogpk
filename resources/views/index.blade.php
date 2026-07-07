@@ -17,12 +17,14 @@
                     کتے فراہم کرتا ہے۔ ہماری ٹیم پورے پاکستان میں چوبیس گھنٹے آپ کی خدمت کے لیے حاضر ہے۔
                 </p>
                 <div class="flex gap-4">
-                    <a href="{{ route('contact') }}" class="btn-primary">Call us - 03000000000</a>
+                    <a href="tel:+923005794720" class="btn-primary">Call us - 03005794720</a>
                 </div>
             </div>
 
             <div class="w-full md:w-1/2 text-center">
-                <img src="https://dummyimage.com/600x360" alt="" class="w-full h-auto">
+                <img src="https://dummyimage.com/600x360"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=800&q=80';"
+                    alt="Army Dog Center trained security dog" class="w-full h-auto">
             </div>
 
         </div>

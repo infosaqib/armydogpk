@@ -120,13 +120,13 @@
                     </p>
                     <div class="flex flex-col gap-1">
                         <a href="tel:+923457125252" class="text-sm font-medium text-blue-700 hover:underline">
-                            0345-7125252
+                            03457125252
                         </a>
                         <a href="tel:+923336937508" class="text-sm font-medium text-blue-700 hover:underline">
-                            0333-6937508
+                            03336937508
                         </a>
                         <a href="tel:+923005794720" class="text-sm font-medium text-blue-700 hover:underline">
-                            0300-5794720
+                            03005794720
                         </a>
                     </div>
                 </div>
