@@ -53,6 +53,6 @@
 }
 
 .filter-btn.active {
-    @apply border-primary text-primary bg-primary bg-opacity-10;
+    @apply border-primary text-primary bg-primary-100;
 }
 </style>

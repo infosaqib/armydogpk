@@ -10,7 +10,7 @@
     <!-- Orange Background -->
     <div class="relative min-h-[400px]">
         <svg class="absolute inset-0 w-full h-full" viewBox="0 0 1600 600" preserveAspectRatio="none">
-            <path fill="#f57224"
+            <path fill="#f85606"
                 d="M0,0 L1600,0 L1600,470 C1400,540 1250,560 1100,540 C950,520 850,470 720,490 C560,515 420,580 280,560 C170,545 80,500 0,440 Z" />
         </svg>
 

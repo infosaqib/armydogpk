@@ -68,7 +68,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                <div class="bg-gradient-to-br from-primary to-amber-700 h-48 flex items-center justify-center">
+                <div class="bg-gradient-to-br from-primary to-primary-700 h-48 flex items-center justify-center">
                     <span class="text-6xl">🔍</span>
                 </div>
                 <div class="p-6">
@@ -79,7 +79,7 @@
             </div>
 
             <div class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                <div class="bg-gradient-to-br from-primary to-amber-700 h-48 flex items-center justify-center">
+                <div class="bg-gradient-to-br from-primary to-primary-700 h-48 flex items-center justify-center">
                     <span class="text-6xl">🛡️</span>
                 </div>
                 <div class="p-6">
@@ -90,7 +90,7 @@
             </div>
 
             <div class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                <div class="bg-gradient-to-br from-primary to-amber-700 h-48 flex items-center justify-center">
+                <div class="bg-gradient-to-br from-primary to-primary-700 h-48 flex items-center justify-center">
                     <span class="text-6xl">🚨</span>
                 </div>
                 <div class="p-6">

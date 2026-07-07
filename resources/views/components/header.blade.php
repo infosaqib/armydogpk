@@ -76,7 +76,7 @@
                             class="pl-3 pr-2 py-2 grid grid-cols-2 gap-3 bg-black/30 rounded-lg my-1">
                             @foreach ($province['cities'] as $city)
                             <a href="{{ url('services/' . $city->slug . '.html') }}"
-                                class="text-sm text-gray-300 hover:text-amber-500 py-1.5 block">
+                                class="text-sm text-gray-300 hover:text-primary py-1.5 block">
                                 {{ $city->city }}
                             </a>
                             @endforeach

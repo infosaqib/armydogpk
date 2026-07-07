@@ -32,26 +32,26 @@
                             <label for="first-name" class="mb-2 block text-sm font-medium text-gray-900">First
                                 Name</label>
                             <input type="text" id="first-name"
-                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:ring-blue-500 focus:outline-none"
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 placeholder-gray-500 focus:border-primary focus:ring-primary focus:outline-none"
                                 placeholder="Bonnie" />
                         </div>
                         <div>
                             <label for="last-name" class="mb-2 block text-sm font-medium text-gray-900">Last
                                 Name</label>
                             <input type="text" id="last-name"
-                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:ring-blue-500 focus:outline-none"
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 placeholder-gray-500 focus:border-primary focus:ring-primary focus:outline-none"
                                 placeholder="Green" />
                         </div>
                         <div>
                             <label for="email" class="mb-2 block text-sm font-medium text-gray-900">Your email</label>
                             <input type="email" id="email"
-                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:ring-blue-500 focus:outline-none"
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 placeholder-gray-500 focus:border-primary focus:ring-primary focus:outline-none"
                                 placeholder="name@example.com" />
                         </div>
                         <div>
                             <label for="phone" class="mb-2 block text-sm font-medium text-gray-900">Phone Number</label>
                             <input type="tel" id="phone"
-                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:ring-blue-500 focus:outline-none"
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 placeholder-gray-500 focus:border-primary focus:ring-primary focus:outline-none"
                                 placeholder="+12 345 6789" />
                         </div>
                     </div>
@@ -59,26 +59,26 @@
                     <div>
                         <label for="message" class="mb-2 block text-sm font-medium text-gray-900">Your message</label>
                         <textarea id="message" rows="5"
-                            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:ring-blue-500 focus:outline-none"
+                            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 placeholder-gray-500 focus:border-primary focus:ring-primary focus:outline-none"
                             placeholder="Leave a comment..."></textarea>
                     </div>
 
                     {{--
                     <div class="flex items-start gap-2">
                         <input type="checkbox" id="terms"
-                            class="mt-0.5 h-4 w-4 rounded border-gray-300 bg-gray-50 text-blue-600 focus:ring-blue-500" />
+                            class="mt-0.5 h-4 w-4 rounded border-gray-300 bg-gray-50 text-primary-600 focus:ring-primary" />
                         <label for="terms" class="text-sm text-gray-600">
                             I confirm that I have read and agree to our
-                            <a href="#" class="font-medium text-gray-900 underline hover:text-blue-700">Terms of
+                            <a href="#" class="font-medium text-gray-900 underline hover:text-primary-700">Terms of
                                 Service</a> and
-                            <a href="#" class="font-medium text-gray-900 underline hover:text-blue-700">Privacy
+                            <a href="#" class="font-medium text-gray-900 underline hover:text-primary-700">Privacy
                                 Statement</a>.
                         </label>
                     </div>
                     --}}
 
                     <button type="submit"
-                        class="rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                        class="rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300">
                         Send message
                     </button>
                 </form>
@@ -102,7 +102,7 @@
                     <p class="mx-auto mb-3 max-w-xs text-sm text-gray-600">
                         Email us with any question about our dogs, training, or services.
                     </p>
-                    <a href="mailto:contact@armydogpk.com" class="text-sm font-medium text-blue-700 hover:underline">
+                    <a href="mailto:contact@armydogpk.com" class="text-sm font-medium text-primary-700 hover:underline">
                         contact@armydogpk.com
                     </a>
                 </div>
@@ -119,13 +119,13 @@
                         Give us a call any time, day or night, and our team will be glad to help.
                     </p>
                     <div class="flex flex-col gap-1">
-                        <a href="tel:+923457125252" class="text-sm font-medium text-blue-700 hover:underline">
+                        <a href="tel:+923457125252" class="text-sm font-medium text-primary-700 hover:underline">
                             03457125252
                         </a>
-                        <a href="tel:+923336937508" class="text-sm font-medium text-blue-700 hover:underline">
+                        <a href="tel:+923336937508" class="text-sm font-medium text-primary-700 hover:underline">
                             03336937508
                         </a>
-                        <a href="tel:+923005794720" class="text-sm font-medium text-blue-700 hover:underline">
+                        <a href="tel:+923005794720" class="text-sm font-medium text-primary-700 hover:underline">
                             03005794720
                         </a>
                     </div>
@@ -145,7 +145,7 @@
                         major city.
                     </p>
                     <a href="{{ route('services') }}"
-                        class="inline-block rounded-lg border border-blue-700 px-4 py-2 text-sm font-medium text-blue-700 transition hover:bg-blue-50">
+                        class="inline-block rounded-lg border border-primary-700 px-4 py-2 text-sm font-medium text-primary-700 transition hover:bg-primary-50">
                         View Our Services
                     </a>
                 </div>
