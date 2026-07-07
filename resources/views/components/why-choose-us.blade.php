@@ -87,8 +87,8 @@
                 commitment to excellence and proven track record make us the trusted choice for military, law
                 enforcement, and private security operations.
             </p>
-            <a href="/contact"
-                class="inline-block bg-primary hover:bg-amber-700 text-dark px-8 py-3 rounded-lg font-bold transition">
+            <a href="{{ route('contact') }}"
+                class="inline-block bg-primary hover:bg-amber-700 text-white px-8 py-3 rounded-lg font-bold transition">
                 Get In Touch
             </a>
         </div>
