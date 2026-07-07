@@ -11,7 +11,7 @@
         <!-- Curved background using SVG -->
         <svg class="absolute inset-0 w-full h-full" viewBox="0 0 1600 600" preserveAspectRatio="none"
             xmlns="http://www.w3.org/2000/svg">
-            <path fill="#f57224"
+            <path fill="#f85606"
                 d="M0,0 L1600,0 L1600,470 C1400,540 1250,560 1100,540 C950,520 850,470 720,490 C560,515 420,580 280,560 C170,545 80,500 0,440 Z" />
         </svg>
 
@@ -31,9 +31,11 @@
             </div>
             <!-- Left-->
             <div class="flex justify-center lg:justify-start">
-                <img src="https://dummyimage.com/600x360"
-                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=800&q=80';"
-                    alt="Army Dog Center trained security dog" class="w-full max-w-[560px] h-auto object-contain drop-shadow-2xl" />
+                <div class="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="{{ asset('images/site_images/about-hero-police-k9-airport-field-patrol.jpeg') }}"
+                        alt="Army Dog Center police K9 dogs on duty at the airport, a rural property search, and a field patrol"
+                        width="600" height="360" class="w-full h-64 sm:h-72 md:h-80 object-cover" loading="lazy" />
+                </div>
             </div>
 
         </div>
@@ -61,7 +63,7 @@
                         respect.
                     </p>
                 </div>
-                <div class="bg-gradient-to-br from-primary to-amber-700 rounded-lg p-12 text-white text-center">
+                <div class="bg-gradient-to-br from-primary to-primary-700 rounded-lg p-12 text-white text-center">
                     <div class="text-6xl mb-4">🏆</div>
                     <h3 class="text-3xl font-bold">20+ Years</h3>
                     <p class="mt-2">Of Excellence in Training</p>

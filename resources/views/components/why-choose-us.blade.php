@@ -73,8 +73,9 @@
 
                 <!-- Badges -->
                 <div class="">
-                    <img alt="gallery" class="w-full h-full object-cover object-center block"
-                        src="https://dummyimage.com/600x360">
+                    <img src="{{ asset('images/site_images/why-choose-us-k9-army-dog-home-search.jpeg') }}"
+                        alt="Army K9 handler and police officer searching luggage with a trained dog during a home security check"
+                        width="600" height="360" class="w-full h-full object-cover object-center block" loading="lazy">
                 </div>
             </div>
         </div>

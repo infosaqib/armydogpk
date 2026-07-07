@@ -32,7 +32,7 @@
     <section class="relative w-full overflow-hidden">
         <div class="relative min-h-[400px]">
             <svg class="absolute inset-0 w-full h-full" viewBox="0 0 1600 600" preserveAspectRatio="none">
-                <path fill="#f57224"
+                <path fill="#f85606"
                     d="M0,0 L1600,0 L1600,470 C1400,540 1250,560 1100,540 C950,520 850,470 720,490 C560,515 420,580 280,560 C170,545 80,500 0,440 Z" />
             </svg>
 
@@ -101,7 +101,7 @@
 
 
         <div class="max-w-md mx-auto mt-16 bg-gray-50 border border-gray-100 rounded-2xl p-6 text-center shadow-sm">
-            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-100 text-primary">
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
