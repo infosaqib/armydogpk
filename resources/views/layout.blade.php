@@ -8,6 +8,10 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="{{ url()->current() }}">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/site_images/logo.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/site_images/logo.png') }}">
+
     <meta property="og:title" content="@yield('title', 'Army Dog Center Pakistan | 03457125252, 03336937508')">
     <meta property="og:description" content="@yield('description', 'Army Dog Center trains and supplies dogs across Pakistan for home security, tracking, and rescue work, backed by a team on call every day of the year. Call now 03005794720.')">
     <meta property="og:image" content="@yield('image', asset('images/default-blog.jpeg'))">

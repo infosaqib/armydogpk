@@ -3,7 +3,11 @@
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center"
         aria-label="Main navigation">
         <div class="flex items-center gap-2">
-            <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center font-bold text-lg">🐕</div>
+            <!-- Logo Container -->
+            <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center overflow-hidden font-bold text-lg">
+                <img src="{{ asset('images/site_images/logo.png') }}" alt="Army Dog Center Pakistan Logo"
+                    class="w-full h-full object-cover">
+            </div>
             <a href="{{route('home')}}" class="font-bold text-xl" rel="home">Army Dog Center Pakistan</a>
         </div>
 
