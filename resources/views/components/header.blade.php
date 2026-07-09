@@ -106,7 +106,22 @@
 <!-- Fixed content -->
 
 <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 items-end">
+  <a href="tel:+923005794720"
+        class="flex items-center justify-center w-14 h-14 bg-primary text-white rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group relative"
+        style="background-color: var(--tw-primary, #1c985d);" {{-- Fallback to a dark blue if your theme's 'primary'
+        isn't loaded --}} aria-label="Call Us">
 
+        <span
+            class="absolute right-16 bg-gray-900 text-white text-xs font-semibold px-2.5 py-1.5 rounded-md shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none hidden md:block">
+            Call Us
+        </span>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-6 h-6"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
+        </svg>
+    </a>
     <a href="https://wa.me/923457125252?text=Hello,%20I%20am%20interested%20in%20your%20services." target="_blank"
         rel="noopener noreferrer"
         class="flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group relative"
@@ -123,21 +138,6 @@
         </svg>
     </a>
 
-    <a href="tel:+923005794720"
-        class="flex items-center justify-center w-14 h-14 bg-primary text-white rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group relative"
-        style="background-color: var(--tw-primary, #1c985d);" {{-- Fallback to a dark blue if your theme's 'primary'
-        isn't loaded --}} aria-label="Call Us">
-
-        <span
-            class="absolute right-16 bg-gray-900 text-white text-xs font-semibold px-2.5 py-1.5 rounded-md shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none hidden md:block">
-            Call Us
-        </span>
-
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-6 h-6"
-            viewBox="0 0 16 16">
-            <path fill-rule="evenodd"
-                d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
-        </svg>
-    </a>
+  
 
 </div>
