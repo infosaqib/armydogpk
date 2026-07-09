@@ -10,6 +10,10 @@ class AuthController extends Controller
 {
     public function loginForm()
     {
+        if (Auth::check() && Auth::user()->is_admin) {
+            return redirect()->route('admin.blogs.index');
+        }
+
         return view('admin.auth.login');
     }
 

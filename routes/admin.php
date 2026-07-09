@@ -6,15 +6,12 @@ use App\Http\Controllers\Admin\ServicePageController;
 use App\Http\Controllers\Admin\ImageController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware('guest')->group(function () {
+Route::get('/', [AuthController::class, 'loginForm'])
+    ->name('login');
 
-    Route::get('/', [AuthController::class, 'loginForm'])
-        ->name('login');
-
-    Route::post('/login', [AuthController::class, 'login'])
-        ->middleware('throttle:5,1')
-        ->name('login.submit');
-});
+Route::post('/login', [AuthController::class, 'login'])
+    ->middleware('throttle:5,1')
+    ->name('login.submit');
 
 Route::middleware(['auth', 'admin'])->group(function () {
 
