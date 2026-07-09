@@ -35,7 +35,7 @@ class ContactMail extends Mailable
                 'email' => $this->contactData['email'],
                 'phone' => $this->contactData['phone'],
                 'service' => ucfirst($this->contactData['service']),
-                'message' => $this->contactData['message'],
+                'contactMessage' => $this->contactData['message'],
             ],
         );
     }

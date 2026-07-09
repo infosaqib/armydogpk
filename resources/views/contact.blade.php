@@ -27,56 +27,64 @@
 
             <div class="relative z-20 mx-auto -mt-44 max-w-3xl px-4 sm:px-6">
                 <div class="rounded-lg bg-white p-6 shadow-xl sm:p-10">
-                    <form class="space-y-6">
+
+                    @if (session('success'))
+                        <div class="mb-6 rounded-lg bg-green-50 p-4 text-sm text-green-800">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    @if ($errors->any())
+                        <div class="mb-6 rounded-lg bg-red-50 p-4 text-sm text-red-800">
+                            <ul class="list-disc space-y-1 pl-5">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <form method="POST" action="{{ route('contact.send') }}" class="space-y-6">
+                        @csrf
                         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
                             <div>
-                                <label for="first-name" class="mb-2 block text-sm font-medium text-gray-900">First
+                                <label for="name" class="mb-2 block text-sm font-medium text-gray-900">Full
                                     Name</label>
-                                <input type="text" id="first-name"
+                                <input type="text" id="name" name="name" value="{{ old('name') }}"
                                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 placeholder-gray-500 focus:border-primary focus:ring-primary focus:outline-none"
-                                    placeholder="Bonnie" />
-                            </div>
-                            <div>
-                                <label for="last-name" class="mb-2 block text-sm font-medium text-gray-900">Last
-                                    Name</label>
-                                <input type="text" id="last-name"
-                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 placeholder-gray-500 focus:border-primary focus:ring-primary focus:outline-none"
-                                    placeholder="Green" />
+                                    placeholder="Bonnie Green" required />
                             </div>
                             <div>
                                 <label for="email" class="mb-2 block text-sm font-medium text-gray-900">Your email</label>
-                                <input type="email" id="email"
+                                <input type="email" id="email" name="email" value="{{ old('email') }}"
                                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 placeholder-gray-500 focus:border-primary focus:ring-primary focus:outline-none"
-                                    placeholder="name@example.com" />
+                                    placeholder="name@example.com" required />
                             </div>
                             <div>
                                 <label for="phone" class="mb-2 block text-sm font-medium text-gray-900">Phone Number</label>
-                                <input type="tel" id="phone"
+                                <input type="tel" id="phone" name="phone" value="{{ old('phone') }}"
                                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 placeholder-gray-500 focus:border-primary focus:ring-primary focus:outline-none"
                                     placeholder="+12 345 6789" />
+                            </div>
+                            <div>
+                                <label for="service" class="mb-2 block text-sm font-medium text-gray-900">Service</label>
+                                <select id="service" name="service" required
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary focus:outline-none">
+                                    <option value="" disabled {{ old('service') ? '' : 'selected' }}>Select a service</option>
+                                    <option value="detection" {{ old('service') == 'detection' ? 'selected' : '' }}>Detection</option>
+                                    <option value="protection" {{ old('service') == 'protection' ? 'selected' : '' }}>Protection</option>
+                                    <option value="rescue" {{ old('service') == 'rescue' ? 'selected' : '' }}>Rescue</option>
+                                    <option value="consultation" {{ old('service') == 'consultation' ? 'selected' : '' }}>Consultation</option>
+                                </select>
                             </div>
                         </div>
 
                         <div>
                             <label for="message" class="mb-2 block text-sm font-medium text-gray-900">Your message</label>
-                            <textarea id="message" rows="5"
+                            <textarea id="message" name="message" rows="5" required minlength="10" maxlength="1000"
                                 class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 placeholder-gray-500 focus:border-primary focus:ring-primary focus:outline-none"
-                                placeholder="Leave a comment..."></textarea>
+                                placeholder="Leave a comment...">{{ old('message') }}</textarea>
                         </div>
-
-                        {{--
-                        <div class="flex items-start gap-2">
-                            <input type="checkbox" id="terms"
-                                class="mt-0.5 h-4 w-4 rounded border-gray-300 bg-gray-50 text-primary-600 focus:ring-primary" />
-                            <label for="terms" class="text-sm text-gray-600">
-                                I confirm that I have read and agree to our
-                                <a href="#" class="font-medium text-gray-900 underline hover:text-primary-700">Terms of
-                                    Service</a> and
-                                <a href="#" class="font-medium text-gray-900 underline hover:text-primary-700">Privacy
-                                    Statement</a>.
-                            </label>
-                        </div>
-                        --}}
 
                         <button type="submit"
                             class="rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
 
@@ -23,7 +24,9 @@ class ContactController extends Controller
 
             return back()->with('success', 'Thank you! Your message has been sent successfully. We will respond within 24 hours.');
         } catch (\Exception $e) {
-            return back()->withErrors(['error' => 'Failed to send message. Please try again later.']);
+            Log::error('Contact mail failed: ' . $e->getMessage());
+
+            return back()->withInput()->withErrors(['error' => 'Failed to send message. Please try again later.']);
         }
     }
 }
