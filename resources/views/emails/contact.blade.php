@@ -11,7 +11,7 @@
 
         <div style="margin: 20px 0; padding: 15px; background-color: #f9fafb; border-left: 4px solid #f85606; border-radius: 4px;">
             <p><strong>Message:</strong></p>
-            <p style="color: #555; white-space: pre-wrap;">{{ $message }}</p>
+            <p style="color: #555; white-space: pre-wrap;">{{ $contactMessage }}</p>
         </div>
 
         <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; font-size: 12px; color: #6b7280;">

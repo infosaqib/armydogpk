@@ -22,7 +22,7 @@
             </div>
 
             <div class="w-full md:w-1/2 text-center">
-                <img src="{{ asset('images/site_images/home-hero-k9-search-rescue-dog-handler.jpeg') }}"
+                <img src="{{ asset('images/site_images/home-hero-army-dog-center-search-rescue-dog-handler.jpeg') }}"
                     alt="Army Dog Center K9 search and rescue dog inspecting luggage with its police handler"
                     width="600" height="360" class="w-full h-auto" loading="eager">
             </div>
