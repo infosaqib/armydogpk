@@ -22,6 +22,9 @@ return Application::configure(basePath: dirname(__DIR__))
             'admin' => \App\Http\Middleware\AdminMiddleware::class,
         ]);
     })
+    ->withCommands([
+        app_path('Console/Commands'),
+    ])
     ->withExceptions(function (Exceptions $exceptions) {
         //
     })->create();
