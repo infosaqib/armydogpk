@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'About Us | Army Dog Center Pakistan')
+@section('title', 'About Us | Army Dog Center 03457125252, 03336937508')
 @section('description', 'Army Dog Center has trained dogs for the military, police, and private clients across Pakistan for over 20 years. Call 03005794720 to learn more.')
 
 @section('content')
