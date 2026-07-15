@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Our Services | Army Dog Center Pakistan')
+@section('title', 'Our Services | Army Dog Center 03457125252, 03336937508')
 @section('description', 'Army Dog Center provides trained dogs and skilled handlers across Pakistan for detection, protection, tracking, and search & rescue work. Call 03005794720.')
 
 @section('content')
