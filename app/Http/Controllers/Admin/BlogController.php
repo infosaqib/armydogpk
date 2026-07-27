@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -67,6 +68,8 @@ class BlogController extends Controller
 
         $this->generator->generateBlog($blog);
 
+        Artisan::call('sitemap:generate');
+
         return redirect()
             ->route('admin.blogs.index')
             ->with('success', 'Blog created successfully.');
@@ -97,6 +100,8 @@ class BlogController extends Controller
 
         $this->generator->generateBlog($blog, $oldSlug);
 
+        Artisan::call('sitemap:generate');
+
         return redirect()
             ->route('admin.blogs.index')
             ->with('success', 'Blog updated successfully.');
@@ -117,6 +122,8 @@ class BlogController extends Controller
 
             $this->generator->deleteBlog($blog);
             $blog->delete();
+
+            Artisan::call('sitemap:generate');
         });
 
         return redirect()
