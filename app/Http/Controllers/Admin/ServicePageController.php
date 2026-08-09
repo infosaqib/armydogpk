@@ -23,7 +23,7 @@ class ServicePageController extends Controller
     }
     public function index()
     {
-        $servicePages = ServicePage::latest()->paginate(20);
+        $servicePages = ServicePage::latest()->paginate(12);
 
         return view('admin.service-pages.index', compact('servicePages'));
     }

@@ -44,7 +44,7 @@ class BlogController extends Controller
     }
     public function index()
     {
-        $blogs = Blog::latest()->paginate(20);
+        $blogs = Blog::latest()->paginate(12);
 
         return view('admin.blogs.index', compact('blogs'));
     }
@@ -71,7 +71,7 @@ class BlogController extends Controller
         Artisan::call('sitemap:generate');
 
         return redirect()
-            ->route('admin.blogs.index')
+            ->route('admin.blogs.create')
             ->with('success', 'Blog created successfully.');
     }
 
