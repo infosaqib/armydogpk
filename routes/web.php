@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
@@ -15,30 +16,14 @@ Route::get('/service', function () {
     return view('services');
 })->name('services');
 
-Route::get('/services/{slug}', function ($slug) {
-
-    $path = public_path("services/{$slug}.html");
-
-    abort_unless(File::exists($path), 404);
-
-    return response()->file($path);
-
-})->name('services.show');
+Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('services.show');
 
 Route::get('/about', function () {
     return view('about');
 })->name('about');
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
-Route::get('/blogs/{slug}', function ($slug) {
-
-    $path = public_path("blogs/{$slug}.html");
-
-    abort_unless(File::exists($path), 404);
-
-    return response()->file($path);
-
-})->name('blogs.show');
+Route::get('/blogs/{slug}', [BlogController::class, 'show'])->name('blogs.show');
 
 Route::get('/contact', function () {
     return view('contact');
