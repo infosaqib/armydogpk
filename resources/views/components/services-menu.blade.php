@@ -61,7 +61,7 @@
 
                     <div class="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4">
                         @foreach ($province['cities'] as $city)
-                            <a href="{{ url('services/' . $city->slug . '.html') }}"
+                            <a href="{{ url('services/' . $city->slug ) }}"
                                 class="text-gray-300 hover:text-primary text-sm transition-colors whitespace-nowrap overflow-hidden text-ellipsis">
                                 {{ $city->city }}
                             </a>

@@ -83,7 +83,7 @@
 
                     <td class="px-6 py-4 text-right whitespace-nowrap">
                         <div class="flex items-center justify-end gap-3">
-                            <a href="{{'/services/' . $service_page->slug . '.html'}}"
+                            <a href="{{'/services/' . $service_page->slug }}"
                                 class="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
                                 title="View">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

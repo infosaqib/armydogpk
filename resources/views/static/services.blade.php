@@ -8,14 +8,14 @@
     <meta name="description"
         content="Army Dog Center in {{ $servicePage->city }}, {{ ucfirst($servicePage->province) }} offers trained guard dogs, investigation help, tracking, detection and 24/7 emergency support.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="{{ url('services/' . $servicePage->slug . '.html') }}">
+    <link rel="canonical" href="{{ url('services/' . $servicePage->slug ) }}">
 
     <meta property="og:title" content="Army Dog Center {{ $servicePage->city }} 03005794720,{{ $servicePage->phone_1 }}">
     <meta property="og:description"
         content="Reliable dog-based security and investigation help in {{ $servicePage->city }}.">
     <meta property="og:image" content="{{ asset('storage/' . $servicePage->image->path) }}">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ url('services/' . $servicePage->slug . '.html') }}">
+    <meta property="og:url" content="{{ url('services/' . $servicePage->slug ) }}">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Army Dog Center {{ $servicePage->city }} 03005794720,{{ $servicePage->phone_1 }}">

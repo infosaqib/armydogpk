@@ -8,13 +8,13 @@
     <title>{{ $blog->title }} - Army Dog Center</title>
     <meta name="description" content="{{ $blog->excerpt }}">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="{{ url('blogs/' . $blog->slug . '.html') }}">
+    <link rel="canonical" href="{{ url('blogs/' . $blog->slug) }}">
 
     <meta property="og:title" content="{{ $blog->title }}">
     <meta property="og:description" content="{{ $blog->excerpt }}">
     <meta property="og:image" content="{{ $blog->thumbnail }}">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="{{ url('blogs/' . $blog->slug . '.html') }}">
+    <meta property="og:url" content="{{ url('blogs/' . $blog->slug) }}">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ $blog->title }}">
@@ -36,7 +36,7 @@
                         <div class="inline-flex items-center mr-3 text-sm text-gray-900">
 
                             @if($blog->image)
-                            <img class="mr-4 w-16 h-16 rounded-full" src="{{ $blog->image }}" alt="{{ $blog->title }}">
+                                <img class="mr-4 w-16 h-16 rounded-full" src="{{ $blog->image }}" alt="{{ $blog->title }}">
                             @endif
 
                             <div>
