@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\ServicePage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
@@ -46,9 +47,11 @@ class ServicePageController extends Controller
         $servicePage->image()->create([
             'path' => $path,
         ]);
-        
+
+        Artisan::call('sitemap:generate');
+
         return redirect()
-            ->route('admin.service-pages.index')
+            ->route('admin.service-pages.create')
             ->with('success', 'Service page created successfully.');
     }
 
@@ -73,6 +76,8 @@ class ServicePageController extends Controller
 
                 // Delete the service page record
                 $servicePage->delete();
+
+                Artisan::call('sitemap:generate');
             } catch (\Exception $e) {
                 Log::error("Failed to delete service page", [
                     'service_page_id' => $servicePage->id,
