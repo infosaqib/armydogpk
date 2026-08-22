@@ -9,11 +9,9 @@ class ServiceController extends Controller
 {
     public function show(Request $request, $slug)
     {
-        $page = ServicePage::where('slug', $slug)->first();
-        if ($page) {
-            return view('services.view', [
-                'page' => $page,
-            ]);
+        $servicePage = ServicePage::where('slug', $slug)->firstOrFail();
+        if ($servicePage) {
+            return view('services.view', compact('servicePage'));
         }
         abort(404);
     }
