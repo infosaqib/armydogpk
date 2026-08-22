@@ -1,7 +1,7 @@
 @extends('layout')
 
-@section('title', 'Blog | Army Dog Center 03457125252, 03336937508')
-@section('description', 'Read news, tips, and updates from Army Dog Center on dog training, security, and rescue work across Pakistan. Call 03005794720.')
+@section('title', $blog->title .' - Army Dog Center')
+@section('description', $blog->excerpt)
 
 @section('content')
 
