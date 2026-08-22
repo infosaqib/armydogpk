@@ -10,17 +10,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
-use App\Services\StaticSiteGenerator;
 
 class ServicePageController extends Controller
 {
-
-    protected StaticSiteGenerator $generator;
-
-    public function __construct(StaticSiteGenerator $generator)
-    {
-        $this->generator = $generator;
-    }
     public function index()
     {
         $servicePages = ServicePage::latest()->paginate(12);
@@ -56,8 +48,6 @@ class ServicePageController extends Controller
             'path' => $path,
         ]);
 
-        $this->generator->generateServicePage($servicePage);
-
         Artisan::call('sitemap:generate');
 
         return redirect()
@@ -83,9 +73,6 @@ class ServicePageController extends Controller
                     }
                     $servicePage->image()->delete();
                 }
-
-                // Delete the generated static page
-                $this->generator->deleteServicePage($servicePage);
 
                 // Delete the service page record
                 $servicePage->delete();

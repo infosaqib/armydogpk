@@ -9,18 +9,10 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
-use App\Services\StaticSiteGenerator;
 use Mews\Purifier\Facades\Purifier;
 
 class BlogController extends Controller
 {
-
-    protected StaticSiteGenerator $generator;
-
-    public function __construct(StaticSiteGenerator $generator)
-    {
-        $this->generator = $generator;
-    }
 
     protected function attachEditorImages(Blog $blog): void
     {
@@ -66,8 +58,6 @@ class BlogController extends Controller
 
         $this->attachEditorImages($blog);
 
-        $this->generator->generateBlog($blog);
-
         Artisan::call('sitemap:generate');
 
         return redirect()
@@ -98,7 +88,6 @@ class BlogController extends Controller
 
         $this->attachEditorImages($blog);
 
-        $this->generator->generateBlog($blog, $oldSlug);
 
         Artisan::call('sitemap:generate');
 
@@ -119,8 +108,6 @@ class BlogController extends Controller
                 }
                 $image->delete();
             }
-
-            $this->generator->deleteBlog($blog);
             $blog->delete();
 
             Artisan::call('sitemap:generate');

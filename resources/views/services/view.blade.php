@@ -1,34 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Army Dog Center {{ $servicePage->city }} 03005794720,{{ $servicePage->phone_1 }}</title>
-    <meta name="description"
-        content="Army Dog Center in {{ $servicePage->city }}, {{ ucfirst($servicePage->province) }} offers trained guard dogs, investigation help, tracking, detection and 24/7 emergency support.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="{{ url('services/' . $servicePage->slug ) }}">
+@section('title', 'Army Dog Center ' . $servicePage->city . ' 03005794720,' . $servicePage->phone_1)
+@section('description', 'Army Dog Center in ' . $servicePage->city . ', ' . ucfirst($servicePage->province) . ' offers trained guard dogs, investigation help, tracking, detection and 24/7 emergency support.')
 
-    <meta property="og:title" content="Army Dog Center {{ $servicePage->city }} 03005794720,{{ $servicePage->phone_1 }}">
-    <meta property="og:description"
-        content="Reliable dog-based security and investigation help in {{ $servicePage->city }}.">
-    <meta property="og:image" content="{{ asset('storage/' . $servicePage->image->path) }}">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ url('services/' . $servicePage->slug ) }}">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Army Dog Center {{ $servicePage->city }} 03005794720,{{ $servicePage->phone_1 }}">
-    <meta name="twitter:description"
-        content="Reliable dog-based security and investigation help in {{ $servicePage->city }}.">
-    <meta name="twitter:image" content="{{ asset('storage/' . $servicePage->image->path) }}">
-
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-
-<body class="bg-white text-gray-900 antialiased">
-    <x-header />
-
+@section('content')
     <section class="relative w-full overflow-hidden">
         <div class="relative min-h-[400px]">
             <svg class="absolute inset-0 w-full h-full" viewBox="0 0 1600 600" preserveAspectRatio="none">
@@ -46,7 +21,8 @@
                     {{ $servicePage->city }}, {{ ucfirst($servicePage->province) }}
                 </p>
                 <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
-                    <a href="tel:+923005794720" class="btn-primary bg-white hover:bg-slate-50  text-gray-900">Call us - 03005794720</a>
+                    <a href="tel:+923005794720" class="btn-primary bg-white hover:bg-slate-50  text-gray-900">Call us -
+                        03005794720</a>
                 </div>
             </div>
         </div>
@@ -67,19 +43,19 @@
 
                 <ul class="mt-8 space-y-4">
                     @foreach ([
-    "Finding Evidence & Investigation Help in {$servicePage->city}",
-    "Guard Dogs for Safety & Protection in {$servicePage->city}",
-    "Search & Tracking Services in {$servicePage->city}",
-    "24/7 Emergency Help Team in {$servicePage->city}",
-] as $service)
-                    <li class="flex items-start gap-3 text-gray-800">
-                        <span class="mt-1 text-primary flex-shrink-0">
-                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>
-                        </span>
-                        <span class="font-medium">{{ $service }}</span>
-                    </li>
+                            "Finding Evidence & Investigation Help in {$servicePage->city}",
+                            "Guard Dogs for Safety & Protection in {$servicePage->city}",
+                            "Search & Tracking Services in {$servicePage->city}",
+                            "24/7 Emergency Help Team in {$servicePage->city}",
+                        ] as $service)
+                        <li class="flex items-start gap-3 text-gray-800">
+                            <span class="mt-1 text-primary flex-shrink-0">
+                                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                            <span class="font-medium">{{ $service }}</span>
+                        </li>
                     @endforeach
                 </ul>
 
@@ -104,7 +80,7 @@
             <div class="mt-2 text-gray-700 space-y-1 font-semibold text-base tracking-wide">
                 <p>{{ $servicePage->phone_1 }}</p>
                 @if($servicePage->phone_2)
-                <p>{{ $servicePage->phone_2 }}</p>
+                    <p>{{ $servicePage->phone_2 }}</p>
                 @endif
             </div>
         </div>
@@ -119,32 +95,28 @@
 
             <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
                 @foreach ([
-    [
-        'title' => 'Local Expertise',
-        'desc' => "Our team knows {$servicePage->city} and the nearby areas well, so we can respond fast
-                and get the job done right."
-    ],
-    [
-        'title' => 'Fast Response Time',
-        'desc' => "We keep our teams close by in {$servicePage->city}, so we can reach you quickly during
-                emergencies or urgent security needs."
-    ],
-    [
-        'title' => 'Community Trust',
-        'desc' => "We have good working relationships with local authorities and businesses in
-                {$servicePage->city}, which helps us work together smoothly."
-    ],
-] as $item)
-                <div class="rounded-lg bg-white p-7 shadow-sm border border-gray-100">
-                    <h3 class="text-lg font-bold text-gray-900">{{ $item['title'] }}</h3>
-                    <p class="mt-4 text-gray-600 leading-relaxed text-sm">{{ $item['desc'] }}</p>
-                </div>
+                        [
+                            'title' => 'Local Expertise',
+                            'desc' => "Our team knows {$servicePage->city} and the nearby areas well, so we can respond fast
+                                                        and get the job done right."
+                        ],
+                        [
+                            'title' => 'Fast Response Time',
+                            'desc' => "We keep our teams close by in {$servicePage->city}, so we can reach you quickly during
+                                                        emergencies or urgent security needs."
+                        ],
+                        [
+                            'title' => 'Community Trust',
+                            'desc' => "We have good working relationships with local authorities and businesses in
+                                                        {$servicePage->city}, which helps us work together smoothly."
+                        ],
+                    ] as $item)
+                    <div class="rounded-lg bg-white p-7 shadow-sm border border-gray-100">
+                        <h3 class="text-lg font-bold text-gray-900">{{ $item['title'] }}</h3>
+                        <p class="mt-4 text-gray-600 leading-relaxed text-sm">{{ $item['desc'] }}</p>
+                    </div>
                 @endforeach
             </div>
         </div>
     </section>
-
-    @include('components.footer')
-</body>
-
-</html>
+@endsection

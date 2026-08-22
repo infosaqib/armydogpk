@@ -1,31 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@section('title', $blog->title . ' - Army Dog Center')
+@section('description', $blog->excerpt)
 
-    <title>{{ $blog->title }} - Army Dog Center</title>
-    <meta name="description" content="{{ $blog->excerpt }}">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="{{ url('blogs/' . $blog->slug) }}">
-
-    <meta property="og:title" content="{{ $blog->title }}">
-    <meta property="og:description" content="{{ $blog->excerpt }}">
-    <meta property="og:image" content="{{ $blog->thumbnail }}">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="{{ url('blogs/' . $blog->slug) }}">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ $blog->title }}">
-    <meta name="twitter:description" content="{{ $blog->excerpt }}">
-    <meta name="twitter:image" content="{{ $blog->thumbnail }}">
-
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-
-<body>
-    <x-header />
+@section('content')
 
     <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white antialiased">
         <div class="flex justify-between px-4 mx-auto max-w-screen-xl">
@@ -64,7 +42,4 @@
         </div>
     </main>
 
-    @include('components.footer')
-</body>
-
-</html>
+@endsection

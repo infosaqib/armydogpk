@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Services\ServiceLocations;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -17,8 +19,14 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap services.
      */
-    public function boot(): void
+    public function boot(ServiceLocations $locations): void
     {
+
+        // Share $provinces specifically with the header partial
+        View::composer('layouts.partials.header', function ($view) use ($locations) {
+            $view->with('provinces', $locations->provinces());
+        });
+
         if (!$this->app->runningInConsole()) {
             $host = request()->getHost();
 

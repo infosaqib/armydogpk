@@ -31,7 +31,7 @@ class StaticSiteGenerator
 
         try {
             File::put(
-                $directory . '/' . $blog->slug . '.html',
+                $directory . '/' . $blog->slug,
                 $html
             );
         } catch (\Exception $e) {
@@ -42,7 +42,7 @@ class StaticSiteGenerator
 
     public function deleteBlog(Blog $blog): void
     {
-        $path = public_path('blogs/' . $blog->slug . '.html');
+        $path = public_path('blogs/' . $blog->slug);
 
         if (File::exists($path)) {
             File::delete($path);

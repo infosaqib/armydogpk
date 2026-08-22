@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('title', 'Blog | Army Dog Center 03457125252, 03336937508')
 @section('description', 'Read news, tips, and updates from Army Dog Center on dog training, security, and rescue work across Pakistan. Call 03005794720.')
@@ -50,7 +50,7 @@
                             <div class="prose prose-lg max-w-none">
                                 {!! Illuminate\Support\Str::limit(strip_tags($blog->content), 100, '...') !!}
                             </div>
-                            <a href="{{ '/blogs/' . $blog->slug . '.html'}}"
+                            <a href="{{ '/blogs/' . $blog->slug }}"
                                 class="cursor-pointer text-lg text-[#f85606] hover:text-[#d44805] font-semibold inline-block mt-4 transition-colors">
                                 Read more &rarr;
                             </a>

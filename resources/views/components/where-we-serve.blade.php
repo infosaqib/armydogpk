@@ -32,7 +32,7 @@
             @foreach($provinces as $province)
                 @foreach($province['cities'] as $city)
 
-                    <a href="{{ url('services/' . $city->slug . '.html') }}" class="location-card block"
+                    <a href="{{ url('services/' . $city->slug) }}" class="location-card block"
                         data-province="{{ $province['key'] }}">
 
                         <div class="bg-white p-3 rounded-lg shadow-md hover:shadow-lg transition border-l-4 border-primary">
