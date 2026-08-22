@@ -12,8 +12,8 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
-Route::get('/service', function () {
-    return view('services');
+Route::get('/services', function () {
+    return view('services.index');
 })->name('services');
 
 Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('services.show');
@@ -22,7 +22,7 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+Route::get('/blogs', [BlogController::class, 'index'])->name('blog');
 Route::get('/blogs/{slug}', [BlogController::class, 'show'])->name('blogs.show');
 
 Route::get('/contact', function () {
