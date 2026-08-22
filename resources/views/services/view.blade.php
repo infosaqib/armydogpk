@@ -1,7 +1,7 @@
 @extends('layout')
 
-@section('title', 'Our Services | Army Dog Center 03457125252, 03336937508')
-@section('description', 'Army Dog Center provides trained dogs and skilled handlers across Pakistan for detection, protection, tracking, and search & rescue work. Call 03005794720.')
+@section('title', 'Army Dog Center ' . $servicePage->city . ' 03005794720,' . $servicePage->phone_1)
+@section('description', 'Army Dog Center in ' . $servicePage->city . ', ' . ucfirst($servicePage->province) . ' offers trained guard dogs, investigation help, tracking, detection and 24/7 emergency support.')
 
 @section('content')
     <section class="relative w-full overflow-hidden">
