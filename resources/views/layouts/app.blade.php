@@ -24,13 +24,13 @@
 </head>
 
 <body class="bg-white text-gray-900">
-    @include('partials.header')
+    @include('layouts.partials.header')
 
     <main>
         @yield('content')
     </main>
 
-    @include('partials.footer')
+    @include('layouts.partials.footer')
 </body>
 
 </html>
