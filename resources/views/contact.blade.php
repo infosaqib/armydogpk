@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('title', 'Contact Us | Army Dog Center 03457125252, 03336937508')
 @section('description', 'Get in touch with Army Dog Center for trained dogs, security, and rescue help across Pakistan. Call 03457125252, 03336937508, or 03005794720.')
@@ -70,11 +70,15 @@
                                 <label for="service" class="mb-2 block text-sm font-medium text-gray-900">Service</label>
                                 <select id="service" name="service" required
                                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary focus:outline-none">
-                                    <option value="" disabled {{ old('service') ? '' : 'selected' }}>Select a service</option>
-                                    <option value="detection" {{ old('service') == 'detection' ? 'selected' : '' }}>Detection</option>
-                                    <option value="protection" {{ old('service') == 'protection' ? 'selected' : '' }}>Protection</option>
+                                    <option value="" disabled {{ old('service') ? '' : 'selected' }}>Select a service
+                                    </option>
+                                    <option value="detection" {{ old('service') == 'detection' ? 'selected' : '' }}>Detection
+                                    </option>
+                                    <option value="protection" {{ old('service') == 'protection' ? 'selected' : '' }}>
+                                        Protection</option>
                                     <option value="rescue" {{ old('service') == 'rescue' ? 'selected' : '' }}>Rescue</option>
-                                    <option value="consultation" {{ old('service') == 'consultation' ? 'selected' : '' }}>Consultation</option>
+                                    <option value="consultation" {{ old('service') == 'consultation' ? 'selected' : '' }}>
+                                        Consultation</option>
                                 </select>
                             </div>
                         </div>

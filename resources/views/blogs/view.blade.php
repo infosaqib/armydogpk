@@ -1,6 +1,6 @@
-@extends('layout')
+@extends('layouts.app')
 
-@section('title', $blog->title .' - Army Dog Center')
+@section('title', $blog->title . ' - Army Dog Center')
 @section('description', $blog->excerpt)
 
 @section('content')

@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('title', 'Army Dog Center ' . $servicePage->city . ' 03005794720,' . $servicePage->phone_1)
 @section('description', 'Army Dog Center in ' . $servicePage->city . ', ' . ucfirst($servicePage->province) . ' offers trained guard dogs, investigation help, tracking, detection and 24/7 emergency support.')
@@ -21,7 +21,8 @@
                     {{ $servicePage->city }}, {{ ucfirst($servicePage->province) }}
                 </p>
                 <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
-                    <a href="tel:+923005794720" class="btn-primary bg-white hover:bg-slate-50  text-gray-900">Call us - 03005794720</a>
+                    <a href="tel:+923005794720" class="btn-primary bg-white hover:bg-slate-50  text-gray-900">Call us -
+                        03005794720</a>
                 </div>
             </div>
         </div>
@@ -42,11 +43,11 @@
 
                 <ul class="mt-8 space-y-4">
                     @foreach ([
-    "Finding Evidence & Investigation Help in {$servicePage->city}",
-    "Guard Dogs for Safety & Protection in {$servicePage->city}",
-    "Search & Tracking Services in {$servicePage->city}",
-    "24/7 Emergency Help Team in {$servicePage->city}",
-] as $service)
+                            "Finding Evidence & Investigation Help in {$servicePage->city}",
+                            "Guard Dogs for Safety & Protection in {$servicePage->city}",
+                            "Search & Tracking Services in {$servicePage->city}",
+                            "24/7 Emergency Help Team in {$servicePage->city}",
+                        ] as $service)
                         <li class="flex items-start gap-3 text-gray-800">
                             <span class="mt-1 text-primary flex-shrink-0">
                                 <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -94,22 +95,22 @@
 
             <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
                 @foreach ([
-    [
-        'title' => 'Local Expertise',
-        'desc' => "Our team knows {$servicePage->city} and the nearby areas well, so we can respond fast
-                                    and get the job done right."
-    ],
-    [
-        'title' => 'Fast Response Time',
-        'desc' => "We keep our teams close by in {$servicePage->city}, so we can reach you quickly during
-                                    emergencies or urgent security needs."
-    ],
-    [
-        'title' => 'Community Trust',
-        'desc' => "We have good working relationships with local authorities and businesses in
-                                    {$servicePage->city}, which helps us work together smoothly."
-    ],
-] as $item)
+                        [
+                            'title' => 'Local Expertise',
+                            'desc' => "Our team knows {$servicePage->city} and the nearby areas well, so we can respond fast
+                                                        and get the job done right."
+                        ],
+                        [
+                            'title' => 'Fast Response Time',
+                            'desc' => "We keep our teams close by in {$servicePage->city}, so we can reach you quickly during
+                                                        emergencies or urgent security needs."
+                        ],
+                        [
+                            'title' => 'Community Trust',
+                            'desc' => "We have good working relationships with local authorities and businesses in
+                                                        {$servicePage->city}, which helps us work together smoothly."
+                        ],
+                    ] as $item)
                     <div class="rounded-lg bg-white p-7 shadow-sm border border-gray-100">
                         <h3 class="text-lg font-bold text-gray-900">{{ $item['title'] }}</h3>
                         <p class="mt-4 text-gray-600 leading-relaxed text-sm">{{ $item['desc'] }}</p>
