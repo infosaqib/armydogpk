@@ -2,10 +2,19 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ServiceController;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\ContactController;
+use Illuminate\Support\Facades\Route;
+
+// Redirects /services/{slug}.html -> /services/{slug}
+Route::get('/services/{slug}.html', function ($slug) {
+    return redirect()->route('services.show', ['slug' => $slug], 301);
+});
+
+// Redirects /blogs/{slug}.html -> /blogs/{slug}
+Route::get('/blogs/{slug}.html', function ($slug) {
+    return redirect()->route('blogs.show', ['slug' => $slug], 301);
+});
 
 // Public Routes
 Route::get('/', function () {
@@ -16,14 +25,19 @@ Route::get('/services', function () {
     return view('services.index');
 })->name('services');
 
-Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('services.show');
+Route::get('/services/{slug}', [ServiceController::class, 'show'])
+    ->where('slug', '^(?!.*\.html$).*') // Ensures .html isn't treated as a normal slug
+    ->name('services.show');
 
 Route::get('/about', function () {
     return view('about');
 })->name('about');
 
 Route::get('/blogs', [BlogController::class, 'index'])->name('blog');
-Route::get('/blogs/{slug}', [BlogController::class, 'show'])->name('blogs.show');
+
+Route::get('/blogs/{slug}', [BlogController::class, 'show'])
+    ->where('slug', '^(?!.*\.html$).*')
+    ->name('blogs.show');
 
 Route::get('/contact', function () {
     return view('contact');
