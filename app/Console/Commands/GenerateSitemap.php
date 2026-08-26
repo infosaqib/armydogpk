@@ -4,7 +4,6 @@ namespace App\Console\Commands;
 
 use App\Models\Blog;
 use App\Models\ServicePage;
-use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Spatie\Sitemap\Sitemap;
@@ -20,25 +19,38 @@ class GenerateSitemap extends Command
     {
         $this->info('Generating sitemap...');
 
-        $sitemap = Sitemap::create()
-            ->add(Url::create(route('home'))->setPriority(1.0))
-            ->add(Url::create(route('services'))->setPriority(0.8))
-            ->add(Url::create(route('blog'))->setPriority(0.8))
-            ->add(Url::create(route('about'))->setPriority(0.5))
-            ->add(Url::create(route('contact'))->setPriority(0.5));
+        $now = now(); // Capture execution time once for consistency
+
+        $staticRoutes = [
+            ['route' => 'home', 'priority' => 1.0],
+            ['route' => 'services', 'priority' => 0.8],
+            ['route' => 'blog', 'priority' => 0.8],
+            ['route' => 'about', 'priority' => 0.5],
+            ['route' => 'contact', 'priority' => 0.5],
+        ];
+
+        $sitemap = Sitemap::create();
+
+        foreach ($staticRoutes as $page) {
+            $sitemap->add(
+                Url::create(route($page['route']))
+                    ->setPriority($page['priority'])
+                    ->setLastModificationDate($now)
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+            );
+        }
 
         $serviceCount = 0;
         ServicePage::query()
-            ->select(['id', 'slug', 'updated_at', 'created_at'])
+            ->select(['id', 'slug'])
             ->orderBy('id')
             ->cursor()
-            ->each(function (ServicePage $page) use (&$sitemap, &$serviceCount) {
-                $lastMod = $page->updated_at ?? $page->created_at ?? now();
+            ->each(function (ServicePage $page) use (&$sitemap, &$serviceCount, $now) {
                 $sitemap->add(
                     Url::create(route('services.show', ['slug' => $page->slug]))
-                        ->setLastModificationDate(Carbon::parse($lastMod))
-                        ->setPriority(0.7)
-                        ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
+                        ->setLastModificationDate($now)
+                        ->setPriority(0.8)
+                        ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
                 );
                 $serviceCount++;
             });
@@ -47,16 +59,15 @@ class GenerateSitemap extends Command
 
         $blogCount = 0;
         Blog::query()
-            ->select(['id', 'slug', 'updated_at', 'created_at'])
+            ->select(['id', 'slug'])
             ->orderBy('id')
             ->cursor()
-            ->each(function (Blog $blog) use (&$sitemap, &$blogCount) {
-                $lastMod = $blog->updated_at ?? $blog->created_at ?? now();
+            ->each(function (Blog $blog) use (&$sitemap, &$blogCount, $now) {
                 $sitemap->add(
                     Url::create(route('blogs.show', ['slug' => $blog->slug]))
-                        ->setLastModificationDate(Carbon::parse($lastMod))
-                        ->setPriority(0.6)
-                        ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
+                        ->setLastModificationDate($now)
+                        ->setPriority(0.64)
+                        ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
                 );
                 $blogCount++;
             });
