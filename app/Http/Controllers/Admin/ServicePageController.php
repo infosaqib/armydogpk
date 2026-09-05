@@ -14,8 +14,16 @@ use Illuminate\Validation\Rule;
 class ServicePageController extends Controller
 {
     public function index()
+    public function index(Request $request)
     {
         $servicePages = ServicePage::latest()->paginate(12);
+        $servicePages = ServicePage::query()
+            ->when($request->filled('search'), function ($query) use ($request) {
+                $query->where('city', 'like', '%' . $request->search . '%');
+            })
+            ->latest()
+            ->paginate(12)
+            ->withQueryString();
 
         return view('admin.service-pages.index', compact('servicePages'));
     }
