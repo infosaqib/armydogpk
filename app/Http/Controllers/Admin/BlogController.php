@@ -113,8 +113,7 @@ class BlogController extends Controller
             Artisan::call('sitemap:generate');
         });
 
-        return redirect()
-            ->route('admin.blogs.index')
+        return back()
             ->with('success', 'Blog deleted successfully.');
     }
 }
