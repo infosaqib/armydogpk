@@ -94,8 +94,7 @@ class ServicePageController extends Controller
             }
         });
 
-        return redirect()
-            ->route('admin.service-pages.index')
+        return back()
             ->with('success', 'Service page deleted successfully.');
     }
 }
