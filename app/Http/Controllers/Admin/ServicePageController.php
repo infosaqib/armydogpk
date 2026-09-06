@@ -13,6 +13,7 @@ use Illuminate\Validation\Rule;
 
 class ServicePageController extends Controller
 {
+    //Index request
     public function index(Request $request)
     {
         $servicePages = ServicePage::query()
