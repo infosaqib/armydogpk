@@ -20,22 +20,7 @@ class ServicePage extends Model
         static::saving(function (ServicePage $page) {
 
             if ($page->isDirty('city')) {
-
-                $slug = Str::slug($page->city);
-                $originalSlug = $slug;
-                $count = 1;
-
-                // Check if the slug already exists for another service page
-                while (
-                    ServicePage::where('slug', $slug)
-                        ->where('id', '!=', $page->id)
-                        ->exists()
-                ) {
-                    // If it exists, append an incremental number (e.g., chicago-1, chicago-2)
-                    $slug = $originalSlug . '-' . $count++;
-                }
-
-                $page->slug = $slug;
+                $page->slug = Str::slug($page->city);
             }
         });
     }

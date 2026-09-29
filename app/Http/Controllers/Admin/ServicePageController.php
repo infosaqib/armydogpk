@@ -37,7 +37,17 @@ class ServicePageController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'city' => ['required', 'string', 'max:255'],
+            'city' => [
+                'required',
+                'string',
+                'max:255',
+                function (string $attribute, mixed $value, \Closure $fail) {
+                    $slug = \Illuminate\Support\Str::slug($value);
+                    if (ServicePage::where('slug', $slug)->exists()) {
+                        $fail("A service page for \"{$value}\" already exists.");
+                    }
+                },
+            ],
             'province' => [
                 'required',
                 Rule::in(config('services.provinces')),
